@@ -29,94 +29,98 @@
   };
 
   // DOM Elements Cache
-  const elements = {
-    serviceSelectionList: document.getElementById('serviceSelectionList'),
-    servicesGrid: document.getElementById('servicesGrid'),
-    conditionsCategoriesGrid: document.getElementById('conditionsCategoriesGrid'),
-    faqsAccordionList: document.getElementById('faqsAccordionList'),
-    dateCarousel: document.getElementById('dateCarousel'),
-    currentMonthYear: document.getElementById('currentMonthYear'),
-    morningSlotsGrid: document.getElementById('morningSlotsGrid'),
-    eveningSlotsGrid: document.getElementById('eveningSlotsGrid'),
-    step1: document.getElementById('step1'),
-    step2: document.getElementById('step2'),
-    step3: document.getElementById('step3'),
-    toStep2Btn: document.getElementById('toStep2Btn'),
-    backToStep1Btn: document.getElementById('backToStep1Btn'),
-    toStep3Btn: document.getElementById('toStep3Btn'),
-    backToStep2Btn: document.getElementById('backToStep2Btn'),
-    changeServiceBtn: document.getElementById('changeServiceBtn'),
-    selectedServiceSummary: document.getElementById('selectedServiceSummary'),
-    summaryServiceText: document.getElementById('summaryServiceText'),
-    summaryDateTimeText: document.getElementById('summaryDateTimeText'),
-    summaryFeeText: document.getElementById('summaryFeeText'),
-    summaryModeBadge: document.getElementById('summaryModeBadge'),
-    modeLockedBadge: document.getElementById('modeLockedBadge'),
-    lockedModeText: document.getElementById('lockedModeText'),
-    bookingPaymentNotice: document.getElementById('bookingPaymentNotice'),
-    patientPhone: document.getElementById('patientPhone'),
-    sendOtpBtn: document.getElementById('sendOtpBtn'),
-    phoneStatusTag: document.getElementById('phoneStatusTag'),
-    phoneInputRow: document.getElementById('phoneInputRow'),
-    phoneInputHint: document.getElementById('phoneInputHint'),
-    otpInteractivePanel: document.getElementById('otpInteractivePanel'),
-    otpTargetPhoneText: document.getElementById('otpTargetPhoneText'),
-    editNumberBtn: document.getElementById('editNumberBtn'),
-    demoOtpCodeVal: document.getElementById('demoOtpCodeVal'),
-    quickFillOtpBtn: document.getElementById('quickFillOtpBtn'),
-    otpDigit1: document.getElementById('otpDigit1'),
-    otpDigit2: document.getElementById('otpDigit2'),
-    otpDigit3: document.getElementById('otpDigit3'),
-    otpDigit4: document.getElementById('otpDigit4'),
-    verifyOtpBtn: document.getElementById('verifyOtpBtn'),
-    otpTimerDisplay: document.getElementById('otpTimerDisplay'),
-    otpSecondsLeft: document.getElementById('otpSecondsLeft'),
-    resendOtpBtn: document.getElementById('resendOtpBtn'),
-    otpFeedbackAlert: document.getElementById('otpFeedbackAlert'),
-    phoneVerifiedBanner: document.getElementById('phoneVerifiedBanner'),
-    verifiedPhoneDisplay: document.getElementById('verifiedPhoneDisplay'),
-    changeVerifiedPhoneBtn: document.getElementById('changeVerifiedPhoneBtn'),
-    otpPhoneContainer: document.getElementById('otpPhoneContainer'),
-    appointmentForm: document.getElementById('appointmentForm'),
-    confirmBookingBtn: document.getElementById('confirmBookingBtn'),
-    confirmationModal: document.getElementById('confirmationModal'),
-    closeModalBtn: document.getElementById('closeModalBtn'),
-    downloadIcsBtn: document.getElementById('downloadIcsBtn'),
-    googleCalBtn: document.getElementById('googleCalBtn'),
-    notifyDoctorWhatsAppBtn: document.getElementById('notifyDoctorWhatsAppBtn'),
-    patientWhatsAppBtn: document.getElementById('patientWhatsAppBtn'),
-    patientNotifPhoneText: document.getElementById('patientNotifPhoneText'),
-    patientReminderTimeText: document.getElementById('patientReminderTimeText'),
-    toggleWaPreviewBtn: document.getElementById('toggleWaPreviewBtn'),
-    waPreviewCollapse: document.getElementById('waPreviewCollapse'),
-    waChatBubbleText: document.getElementById('waChatBubbleText'),
-    receiptBookingId: document.getElementById('receiptBookingId'),
-    receiptPatientName: document.getElementById('receiptPatientName'),
-    receiptService: document.getElementById('receiptService'),
-    receiptModeBadge: document.getElementById('receiptModeBadge'),
-    receiptPhone: document.getElementById('receiptPhone'),
-    receiptDateTime: document.getElementById('receiptDateTime'),
-    receiptLocation: document.getElementById('receiptLocation'),
-    receiptFee: document.getElementById('receiptFee'),
-    modalOnlineActionWrap: document.getElementById('modalOnlineActionWrap'),
-    modalOfflineActionWrap: document.getElementById('modalOfflineActionWrap'),
-    modalJoinCallBtn: document.getElementById('modalJoinCallBtn'),
-    modalViewClinicMapBtn: document.getElementById('modalViewClinicMapBtn'),
-    myAppointmentsBtn: document.getElementById('myAppointmentsBtn'),
-    myAppointmentsDrawer: document.getElementById('myAppointmentsDrawer'),
-    closeDrawerBtn: document.getElementById('closeDrawerBtn'),
-    myAppointmentsList: document.getElementById('myAppointmentsList'),
-    bookingCountBadge: document.getElementById('bookingCountBadge'),
-    copyAddressBtn: document.getElementById('copyAddressBtn'),
-    mobileToggle: document.getElementById('mobileToggle'),
-    mobileNavDrawer: document.getElementById('mobileNavDrawer'),
-    currentYear: document.getElementById('currentYear')
-  };
+  const elements = {};
+
+  function cacheElements() {
+    elements.serviceSelectionList = document.getElementById('serviceSelectionList');
+    elements.servicesGrid = document.getElementById('servicesGrid');
+    elements.conditionsCategoriesGrid = document.getElementById('conditionsCategoriesGrid');
+    elements.faqsAccordionList = document.getElementById('faqsAccordionList');
+    elements.dateCarousel = document.getElementById('dateCarousel');
+    elements.currentMonthYear = document.getElementById('currentMonthYear');
+    elements.morningSlotsGrid = document.getElementById('morningSlotsGrid');
+    elements.eveningSlotsGrid = document.getElementById('eveningSlotsGrid');
+    elements.step1 = document.getElementById('step1');
+    elements.step2 = document.getElementById('step2');
+    elements.step3 = document.getElementById('step3');
+    elements.toStep2Btn = document.getElementById('toStep2Btn');
+    elements.backToStep1Btn = document.getElementById('backToStep1Btn');
+    elements.toStep3Btn = document.getElementById('toStep3Btn');
+    elements.backToStep2Btn = document.getElementById('backToStep2Btn');
+    elements.changeServiceBtn = document.getElementById('changeServiceBtn');
+    elements.selectedServiceSummary = document.getElementById('selectedServiceSummary');
+    elements.summaryServiceText = document.getElementById('summaryServiceText');
+    elements.summaryDateTimeText = document.getElementById('summaryDateTimeText');
+    elements.summaryFeeText = document.getElementById('summaryFeeText');
+    elements.summaryModeBadge = document.getElementById('summaryModeBadge');
+    elements.modeLockedBadge = document.getElementById('modeLockedBadge');
+    elements.lockedModeText = document.getElementById('lockedModeText');
+    elements.bookingPaymentNotice = document.getElementById('bookingPaymentNotice');
+    elements.patientPhone = document.getElementById('patientPhone');
+    elements.sendOtpBtn = document.getElementById('sendOtpBtn');
+    elements.phoneStatusTag = document.getElementById('phoneStatusTag');
+    elements.phoneInputRow = document.getElementById('phoneInputRow');
+    elements.phoneInputHint = document.getElementById('phoneInputHint');
+    elements.otpInteractivePanel = document.getElementById('otpInteractivePanel');
+    elements.otpTargetPhoneText = document.getElementById('otpTargetPhoneText');
+    elements.editNumberBtn = document.getElementById('editNumberBtn');
+    elements.demoOtpCodeVal = document.getElementById('demoOtpCodeVal');
+    elements.quickFillOtpBtn = document.getElementById('quickFillOtpBtn');
+    elements.otpDigit1 = document.getElementById('otpDigit1');
+    elements.otpDigit2 = document.getElementById('otpDigit2');
+    elements.otpDigit3 = document.getElementById('otpDigit3');
+    elements.otpDigit4 = document.getElementById('otpDigit4');
+    elements.verifyOtpBtn = document.getElementById('verifyOtpBtn');
+    elements.otpTimerDisplay = document.getElementById('otpTimerDisplay');
+    elements.otpSecondsLeft = document.getElementById('otpSecondsLeft');
+    elements.resendOtpBtn = document.getElementById('resendOtpBtn');
+    elements.otpFeedbackAlert = document.getElementById('otpFeedbackAlert');
+    elements.phoneVerifiedBanner = document.getElementById('phoneVerifiedBanner');
+    elements.verifiedPhoneDisplay = document.getElementById('verifiedPhoneDisplay');
+    elements.changeVerifiedPhoneBtn = document.getElementById('changeVerifiedPhoneBtn');
+    elements.otpPhoneContainer = document.getElementById('otpPhoneContainer');
+    elements.appointmentForm = document.getElementById('appointmentForm');
+    elements.confirmBookingBtn = document.getElementById('confirmBookingBtn');
+    elements.confirmationModal = document.getElementById('confirmationModal');
+    elements.closeModalBtn = document.getElementById('closeModalBtn');
+    elements.downloadIcsBtn = document.getElementById('downloadIcsBtn');
+    elements.googleCalBtn = document.getElementById('googleCalBtn');
+    elements.notifyDoctorWhatsAppBtn = document.getElementById('notifyDoctorWhatsAppBtn');
+    elements.patientWhatsAppBtn = document.getElementById('patientWhatsAppBtn');
+    elements.patientNotifPhoneText = document.getElementById('patientNotifPhoneText');
+    elements.patientReminderTimeText = document.getElementById('patientReminderTimeText');
+    elements.toggleWaPreviewBtn = document.getElementById('toggleWaPreviewBtn');
+    elements.waPreviewCollapse = document.getElementById('waPreviewCollapse');
+    elements.waChatBubbleText = document.getElementById('waChatBubbleText');
+    elements.receiptBookingId = document.getElementById('receiptBookingId');
+    elements.receiptPatientName = document.getElementById('receiptPatientName');
+    elements.receiptService = document.getElementById('receiptService');
+    elements.receiptModeBadge = document.getElementById('receiptModeBadge');
+    elements.receiptPhone = document.getElementById('receiptPhone');
+    elements.receiptDateTime = document.getElementById('receiptDateTime');
+    elements.receiptLocation = document.getElementById('receiptLocation');
+    elements.receiptFee = document.getElementById('receiptFee');
+    elements.modalOnlineActionWrap = document.getElementById('modalOnlineActionWrap');
+    elements.modalOfflineActionWrap = document.getElementById('modalOfflineActionWrap');
+    elements.modalJoinCallBtn = document.getElementById('modalJoinCallBtn');
+    elements.modalViewClinicMapBtn = document.getElementById('modalViewClinicMapBtn');
+    elements.myAppointmentsBtn = document.getElementById('myAppointmentsBtn');
+    elements.myAppointmentsDrawer = document.getElementById('myAppointmentsDrawer');
+    elements.closeDrawerBtn = document.getElementById('closeDrawerBtn');
+    elements.myAppointmentsList = document.getElementById('myAppointmentsList');
+    elements.bookingCountBadge = document.getElementById('bookingCountBadge');
+    elements.copyAddressBtn = document.getElementById('copyAddressBtn');
+    elements.mobileToggle = document.getElementById('mobileToggle');
+    elements.mobileNavDrawer = document.getElementById('mobileNavDrawer');
+    elements.currentYear = document.getElementById('currentYear');
+  }
 
   /* ==========================================================================
      1. INITIALIZATION & DATA INJECTION
      ========================================================================== */
   function init() {
+    cacheElements();
+
     // Set dynamic year
     if (elements.currentYear) {
       elements.currentYear.textContent = new Date().getFullYear();
@@ -143,7 +147,41 @@
     setupCopyAddress();
     setupMobileMenu();
     setupSoftScrollEffects();
+    setupMapInteractivity();
     initCinematicMotionSystem();
+    initSeamlessPageTransitions();
+  }
+
+  function reinitializePageComponents() {
+    cacheElements();
+
+    if (elements.currentYear) {
+      elements.currentYear.textContent = new Date().getFullYear();
+    }
+
+    renderBookingServices();
+    renderPublicServices();
+    renderConditions();
+    renderFaqs();
+    initDateCarousel();
+    setupHeroInteractions();
+    setupBookingNavigation();
+    setupDrawerHandlers();
+    setupCertificateModal();
+    setupCopyAddress();
+    setupSoftScrollEffects();
+    setupMapInteractivity();
+
+    // Clean up previous GSAP ScrollTrigger instances
+    if (typeof window.ScrollTrigger !== 'undefined') {
+      window.ScrollTrigger.getAll().forEach(st => st.kill());
+    }
+
+    initCinematicMotionSystem();
+
+    if (typeof window.ScrollTrigger !== 'undefined') {
+      window.ScrollTrigger.refresh();
+    }
   }
 
   /* ==========================================================================
@@ -254,13 +292,13 @@
     if (elements.faqsAccordionList && config.faqs) {
       elements.faqsAccordionList.innerHTML = config.faqs.map((faq, index) => `
         <div class="faq-card ${index === 0 ? 'open' : ''}" id="faq-item-${index}">
-          <button type="button" class="faq-trigger" aria-expanded="${index === 0 ? 'true' : 'false'}">
+          <button type="button" class="faq-trigger" aria-expanded="${index === 0 ? 'true' : 'false'}" aria-controls="faq-content-${index}">
             <span>${escapeHtml(faq.question)}</span>
             <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
-          <div class="faq-content">
+          <div class="faq-content" id="faq-content-${index}">
             <div class="faq-content-inner">
               ${faq.answer.split('\n\n').map(p => `<p class="faq-para">${escapeHtml(p)}</p>`).join('')}
             </div>
@@ -271,9 +309,15 @@
 
     // Bind event listeners to ALL accordion wrappers (.faqs-accordion-wrapper)
     document.querySelectorAll('.faqs-accordion-wrapper').forEach(wrapper => {
-      wrapper.querySelectorAll('.faq-trigger').forEach(trigger => {
-        trigger.addEventListener('click', () => {
-          const card = trigger.closest('.faq-card');
+      wrapper.querySelectorAll('.faq-trigger').forEach((trigger, idx) => {
+        const card = trigger.closest('.faq-card');
+        const content = card ? card.querySelector('.faq-content') : null;
+        if (content && !content.id) {
+          content.id = `faq-content-item-${idx}`;
+          trigger.setAttribute('aria-controls', content.id);
+        }
+
+        const toggleAccordion = () => {
           if (!card) return;
           const isOpen = card.classList.contains('open');
 
@@ -287,6 +331,14 @@
           if (!isOpen) {
             card.classList.add('open');
             trigger.setAttribute('aria-expanded', 'true');
+          }
+        };
+
+        trigger.addEventListener('click', toggleAccordion);
+        trigger.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleAccordion();
           }
         });
       });
@@ -1622,7 +1674,10 @@
   }
 
   function setupMagneticButtons() {
-    // Only enabled for desktop devices with precise pointer
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    // Only enabled for desktop devices with precise pointer and hover
     if (window.matchMedia && !window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
       return;
     }
@@ -1641,8 +1696,10 @@
         const btnCenterX = rect.left + rect.width / 2;
         const btnCenterY = rect.top + rect.height / 2;
 
-        const deltaX = (e.clientX - btnCenterX) * 0.22;
-        const deltaY = (e.clientY - btnCenterY) * 0.22;
+        const rawDeltaX = (e.clientX - btnCenterX) * 0.16;
+        const rawDeltaY = (e.clientY - btnCenterY) * 0.16;
+        const deltaX = Math.max(-8, Math.min(8, rawDeltaX));
+        const deltaY = Math.max(-8, Math.min(8, rawDeltaY));
 
         btn.style.transform = `translate3d(${deltaX.toFixed(2)}px, ${deltaY.toFixed(2)}px, 0)`;
       });
@@ -1929,6 +1986,343 @@
       }, { threshold: 0.35 });
 
       stepCards.forEach(c => stepObserver.observe(c));
+    }
+  }
+
+  /* ==========================================================================
+     V7.1 GOOGLE MAP INTERACTION MANAGER (Scroll Interception Protection)
+     ========================================================================== */
+  function setupMapInteractivity() {
+    const mapWrappers = document.querySelectorAll('.location-map-wrapper');
+    mapWrappers.forEach(wrapper => {
+      const overlay = wrapper.querySelector('.map-interactive-overlay');
+      const enableBtn = wrapper.querySelector('.btn-enable-map');
+
+      if (overlay) {
+        overlay.addEventListener('click', () => {
+          wrapper.classList.add('is-interactive');
+        });
+      }
+      if (enableBtn) {
+        enableBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          wrapper.classList.add('is-interactive');
+        });
+      }
+
+      // Restore scroll-safe mode on mouse leave
+      wrapper.addEventListener('mouseleave', () => {
+        wrapper.classList.remove('is-interactive');
+      });
+    });
+  }
+
+  /* ==========================================================================
+     V7.1 AWWWARDS-CALIBRE SEAMLESS PAGE TRANSITION ENGINE
+     Crossfade + Subtle Vertical Shift (200-350ms), No White Flashes, Zero Jump
+     ========================================================================== */
+  function initSeamlessPageTransitions() {
+    if (!window.history || !window.history.pushState || !window.DOMParser) return;
+
+    const pageCache = new Map();
+    let isTransitioning = false;
+
+    // Create / ensure top progress accent bar
+    let progressBar = document.getElementById('pageTransitionBar');
+    if (!progressBar) {
+      progressBar = document.createElement('div');
+      progressBar.id = 'pageTransitionBar';
+      progressBar.className = 'page-transition-bar';
+      document.body.prepend(progressBar);
+    }
+
+    function syncActiveNavLinks(path) {
+      let normalized = path.replace(/\/index\.html$/, '/') || '/';
+      if (normalized.length > 1 && normalized.endsWith('/')) {
+        normalized = normalized.slice(0, -1);
+      }
+
+      document.querySelectorAll('.nav-links .nav-link').forEach(link => {
+        let href = link.getAttribute('href');
+        if (!href) return;
+        let linkPath = href.split('#')[0].replace(/\/index\.html$/, '/') || '/';
+        if (linkPath.length > 1 && linkPath.endsWith('/')) {
+          linkPath = linkPath.slice(0, -1);
+        }
+        if (linkPath === normalized) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        let href = link.getAttribute('href');
+        if (!href) return;
+        let linkPath = href.split('#')[0].replace(/\/index\.html$/, '/') || '/';
+        if (linkPath.length > 1 && linkPath.endsWith('/')) {
+          linkPath = linkPath.slice(0, -1);
+        }
+        if (linkPath === normalized) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+
+    function prefetchUrl(url) {
+      if (pageCache.has(url)) return;
+      fetch(url, { headers: { 'X-Requested-With': 'SeamlessTransition' } })
+        .then(res => {
+          if (res.ok) return res.text();
+          throw new Error('Prefetch failed');
+        })
+        .then(html => {
+          pageCache.set(url, html);
+        })
+        .catch(() => {});
+    }
+
+    // Intercept clicks on links
+    document.addEventListener('click', (e) => {
+      const anchor = e.target.closest('a');
+      if (!anchor) return;
+
+      // Ignore non-standard navigation gestures
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+      const href = anchor.getAttribute('href');
+      if (!href) return;
+
+      // Ignore telephone, mailto, whatsapp, javascript, download, blank targets
+      if (href.startsWith('tel:') || href.startsWith('mailto:') || href.includes('wa.me') || 
+          href.startsWith('javascript:') || anchor.getAttribute('target') === '_blank' || 
+          anchor.hasAttribute('download')) {
+        return;
+      }
+
+      // Check URL origin
+      let url;
+      try {
+        url = new URL(anchor.href, window.location.origin);
+      } catch (err) {
+        return;
+      }
+      if (url.origin !== window.location.origin) return;
+
+      // Same-page anchor navigation
+      if (url.pathname === window.location.pathname) {
+        if (url.hash) {
+          e.preventDefault();
+          const targetEl = document.querySelector(url.hash);
+          if (targetEl) {
+            const header = document.querySelector('.site-header');
+            const headerHeight = header ? header.offsetHeight + 14 : 76;
+            const targetTop = targetEl.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+            window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
+            history.pushState(null, '', url.hash);
+            closeMobileDrawer();
+          }
+        }
+        return;
+      }
+
+      // Cross-page navigation
+      e.preventDefault();
+      if (isTransitioning) return;
+
+      navigateTo(url.href, { pushHistory: true, targetHash: url.hash });
+    });
+
+    // Prefetch links on hover
+    document.addEventListener('mouseover', (e) => {
+      const anchor = e.target.closest('a');
+      if (!anchor) return;
+      const href = anchor.getAttribute('href');
+      if (!href || href.startsWith('tel:') || href.startsWith('mailto:') || href.includes('wa.me') || 
+          href.startsWith('#') || anchor.getAttribute('target') === '_blank') return;
+      try {
+        const url = new URL(anchor.href, window.location.origin);
+        if (url.origin === window.location.origin && url.pathname !== window.location.pathname) {
+          prefetchUrl(url.href);
+        }
+      } catch (err) {}
+    });
+
+    // Back / Forward Browser History Handling
+    window.addEventListener('popstate', (e) => {
+      const targetUrl = window.location.href;
+      const targetHash = window.location.hash;
+      navigateTo(targetUrl, { pushHistory: false, targetHash: targetHash, isPopState: true });
+    });
+
+    async function navigateTo(urlStr, options = {}) {
+      const { pushHistory = true, targetHash = '', isPopState = false } = options;
+      const mainContent = document.getElementById('main-content');
+      if (!mainContent) {
+        window.location.href = urlStr;
+        return;
+      }
+
+      isTransitioning = true;
+      const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const hasGsap = typeof window.gsap !== 'undefined';
+
+      if (progressBar) {
+        progressBar.style.width = '35%';
+        progressBar.style.opacity = '1';
+      }
+
+      // 1. Refined Exit Transition
+      if (!prefersReducedMotion) {
+        if (hasGsap) {
+          await window.gsap.to(mainContent, {
+            opacity: 0,
+            y: -8,
+            duration: 0.18,
+            ease: 'power2.inOut'
+          });
+        } else {
+          mainContent.style.transition = 'opacity 0.18s ease, transform 0.18s ease';
+          mainContent.style.opacity = '0';
+          mainContent.style.transform = 'translateY(-8px)';
+          await new Promise(r => setTimeout(r, 180));
+        }
+      }
+
+      if (progressBar) progressBar.style.width = '70%';
+
+      // 2. Fetch and Document Swap
+      try {
+        let html = pageCache.get(urlStr);
+        if (!html) {
+          const res = await fetch(urlStr, { headers: { 'X-Requested-With': 'SeamlessTransition' } });
+          if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+          html = await res.text();
+          pageCache.set(urlStr, html);
+        }
+
+        const parser = new DOMParser();
+        const newDoc = parser.parseFromString(html, 'text/html');
+        const newMain = newDoc.getElementById('main-content');
+        const newTitle = newDoc.title || document.title;
+
+        if (!newMain) {
+          window.location.href = urlStr;
+          return;
+        }
+
+        // Update document title and body class
+        document.title = newTitle;
+        if (newDoc.body.className) {
+          document.body.className = newDoc.body.className;
+        }
+
+        // Swap main content
+        mainContent.innerHTML = newMain.innerHTML;
+
+        // Sync navigation indicators
+        const urlObj = new URL(urlStr);
+        syncActiveNavLinks(urlObj.pathname);
+
+        // Close drawer if open
+        closeMobileDrawer();
+
+        // Push URL to history
+        if (pushHistory) {
+          history.pushState({ path: urlStr }, newTitle, urlStr);
+        }
+
+        // Scroll restoration
+        if (targetHash) {
+          const targetEl = document.querySelector(targetHash);
+          if (targetEl) {
+            const header = document.querySelector('.site-header');
+            const headerHeight = header ? header.offsetHeight + 14 : 76;
+            const targetTop = targetEl.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+            window.scrollTo({ top: Math.max(0, targetTop), behavior: 'instant' });
+            
+            // Highlight target card if article
+            const articleCard = targetEl.closest('.article-card') || targetEl;
+            if (articleCard && articleCard.classList.contains('article-card')) {
+              articleCard.classList.add('highlight-target');
+              setTimeout(() => articleCard.classList.remove('highlight-target'), 2200);
+            }
+          } else {
+            window.scrollTo({ top: 0, behavior: 'instant' });
+          }
+        } else {
+          window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+
+        // Re-initialize dynamic components on newly mounted DOM
+        reinitializePageComponents();
+
+        if (progressBar) progressBar.style.width = '100%';
+
+        // 3. Refined Entrance Transition
+        if (!prefersReducedMotion) {
+          if (hasGsap) {
+            window.gsap.fromTo(mainContent,
+              { opacity: 0, y: 10 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.22,
+                ease: 'power2.out',
+                onComplete: () => {
+                  isTransitioning = false;
+                  if (progressBar) {
+                    progressBar.style.opacity = '0';
+                    setTimeout(() => { if (progressBar) progressBar.style.width = '0%'; }, 200);
+                  }
+                }
+              }
+            );
+          } else {
+            mainContent.style.transform = 'translateY(10px)';
+            mainContent.style.opacity = '0';
+            requestAnimationFrame(() => {
+              mainContent.style.transition = 'opacity 0.22s ease, transform 0.22s ease';
+              mainContent.style.opacity = '1';
+              mainContent.style.transform = 'translateY(0)';
+              setTimeout(() => {
+                isTransitioning = false;
+                if (progressBar) {
+                  progressBar.style.opacity = '0';
+                  setTimeout(() => { if (progressBar) progressBar.style.width = '0%'; }, 200);
+                }
+              }, 220);
+            });
+          }
+        } else {
+          mainContent.style.opacity = '1';
+          mainContent.style.transform = 'none';
+          isTransitioning = false;
+          if (progressBar) {
+            progressBar.style.opacity = '0';
+            progressBar.style.width = '0%';
+          }
+        }
+
+      } catch (err) {
+        console.warn('Seamless transition fallback to hard navigation:', err);
+        window.location.href = urlStr;
+      }
+    }
+
+    function closeMobileDrawer() {
+      const drawer = document.getElementById('mobileNavDrawer');
+      const toggle = document.getElementById('mobileToggle');
+      if (drawer && drawer.classList.contains('open')) {
+        drawer.classList.remove('open');
+        document.body.classList.remove('mobile-nav-open');
+        if (toggle) {
+          toggle.classList.remove('active');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      }
     }
   }
 

@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=6.0">
+  <link rel="stylesheet" href="styles.css?v=7.1">
 </head>
 <body class="page-visit">
   <a href="#main-content" class="skip-to-content">Skip to main content</a>
@@ -47,7 +47,7 @@
       <div class="header-actions">
         <a href="tel:+916303285050" class="btn btn-primary btn-header-book" id="navBookBtn" aria-label="Call Clinic">
           <svg class="header-call-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-          <span class="header-btn-text-desktop">Call</span>
+          <span class="header-btn-text-desktop">Call to Schedule</span>
           <span class="header-btn-text-mobile">Call</span>
         </a>
         <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu" aria-expanded="false">
@@ -214,11 +214,26 @@
                 referrerpolicy="no-referrer-when-downgrade">
               </iframe>
 
+              <div class="map-interactive-overlay" id="mapOverlay">
+                <button type="button" class="btn-enable-map" id="enableMapBtn" aria-label="Click to interact with map">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                  <span>Click to Interact with Map</span>
+                </button>
+              </div>
+
               <div class="map-action-bar">
-                <span class="map-coordinates-meta">17.4474° N, 78.3762° E • Jubilee/HITEC Corridor</span>
-                <a href="https://maps.google.com/?q=17.4474,78.3762+(EDGE+Clinic+-+The+Medical+Centre)" target="_blank" rel="noopener noreferrer" class="btn-expand-gmap">
-                  Open Full Map ↗
-                </a>
+                <div class="map-action-left">
+                  <span class="map-coordinates-meta">17.4474° N, 78.3762° E • HITEC City</span>
+                </div>
+                <div class="map-action-buttons">
+                  <a href="https://maps.google.com/?q=17.4474,78.3762+(EDGE+Clinic+-+The+Medical+Centre)" target="_blank" rel="noopener noreferrer" class="btn-directions-primary" aria-label="Get directions to EDGE Clinic">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                    <span>Get Directions</span>
+                  </a>
+                  <a href="https://maps.google.com/?q=17.4474,78.3762+(EDGE+Clinic+-+The+Medical+Centre)" target="_blank" rel="noopener noreferrer" class="btn-expand-gmap">
+                    Full Map ↗
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -316,7 +331,7 @@
 
   <script src="assets/vendor/gsap.min.js"></script>
   <script src="assets/vendor/ScrollTrigger.min.js"></script>
-  <script src="config.js?v=7.0"></script>
-  <script src="app.js?v=7.0"></script>
+  <script src="config.js?v=7.1"></script>
+  <script src="app.js?v=7.1"></script>
 </body>
 </html>
