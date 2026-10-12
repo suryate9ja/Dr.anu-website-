@@ -107,6 +107,9 @@ const CLINIC_CONFIG = {
   },
 
   // Contact Details & Direct Patient Channels
+  // [FLAG FOR CLINIC CONFIRMATION]: The doctor's submitted intake form and website contain differing phone references.
+  // In accordance with V8 specifications, all patient contact actions route to EDGE Clinic reception.
+  // Official reception phone (+91 63032 85050) and WhatsApp (+91 63032 85050) are flagged for formal verification.
   contact: {
     doctorPhone: "+91 6303285050",
     doctorPhoneDisplay: "+91 63032 85050",
@@ -341,11 +344,11 @@ const CLINIC_CONFIG = {
   faqs: [
     {
       question: "Can I walk in for a consultation, or is an appointment mandatory?",
-      answer: "Walk-ins are welcome Monday to Saturday between 9:00 AM and 4:00 PM at EDGE Clinic, HITEC City. Priority queuing is given to scheduled visits, so contacting reception in advance is recommended."
+      answer: "Walk-ins are welcome Monday to Saturday between 9:00 AM and 4:00 PM at EDGE Clinic, HITEC City. To enquire about availability or arrange your visit in advance, call or WhatsApp reception."
     },
     {
       question: "How do I schedule a consultation with Dr. Anusri?",
-      answer: "Call or message EDGE Clinic reception on WhatsApp at +91 63032 85050. Our front desk team verifies available timings and confirms your visit details."
+      answer: "Consultations with Dr. Anusri Adusumilli are coordinated by the EDGE Clinic reception team. Call or WhatsApp reception at +91 63032 85050 to enquire about availability and arrange your visit."
     },
     {
       question: "What payment modes are accepted for consultations?",
@@ -353,7 +356,7 @@ const CLINIC_CONFIG = {
     },
     {
       question: "Are online consultations available?",
-      answer: "Online consultations are subject to clinic confirmation. Please check with reception at +91 63032 85050 to inquire about current remote follow-up availability."
+      answer: "Online consultations are subject to clinic confirmation. Please check with EDGE Clinic reception at +91 63032 85050 to enquire about current remote follow-up availability."
     },
     {
       question: "Where is EDGE Clinic located and what are the consultation timings?",

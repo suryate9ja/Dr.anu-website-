@@ -3742,8 +3742,10 @@ body.mobile-nav-open {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.55rem;
-    font-size: 0.95rem;
+    gap: 0.45rem;
+    font-size: clamp(0.78rem, 3.2vw, 0.94rem);
+    white-space: nowrap;
+    padding: 0 0.5rem;
     font-weight: 700;
     border-radius: var(--radius-pill);
     text-decoration: none;
