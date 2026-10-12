@@ -605,34 +605,112 @@ button {
 
 .mobile-nav-drawer {
   display: none;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  height: 100dvh;
+  box-sizing: border-box;
   background: #ffffff;
-  border-bottom: 1px solid var(--color-border);
-  padding: 1.5rem;
-}
-.mobile-nav-drawer.open {
-  display: block;
+  z-index: 99999;
+  padding: 1.25rem 1.5rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
 }
 
-.mobile-nav-links {
-  list-style: none;
+.mobile-nav-drawer.open {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body.mobile-nav-open {
+  overflow: hidden !important;
+  touch-action: none;
+}
+
+.mobile-drawer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(18, 33, 48, 0.08);
   margin-bottom: 1.5rem;
 }
 
+.mobile-drawer-brand {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  letter-spacing: -0.01em;
+}
+
+.mobile-drawer-close {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f5f9;
+  border: none;
+  border-radius: 50%;
+  color: #334155;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.mobile-drawer-close:active {
+  transform: scale(0.92);
+  background: #e2e8f0;
+}
+
+.mobile-drawer-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav-links {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mobile-nav-links li {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 .mobile-nav-link {
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   font-weight: 600;
-  color: var(--color-text);
-  display: block;
-  padding: 0.5rem 0.75rem;
-  border-radius: 8px;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  text-decoration: none;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
+
+.mobile-nav-link:active {
+  background: #f1f5f9;
+}
+
 .mobile-nav-link.active {
   color: var(--color-accent);
-  background: rgba(23, 155, 158, 0.08);
+  background: rgba(23, 155, 158, 0.09);
   font-weight: 700;
 }
 
@@ -3626,52 +3704,82 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   Mobile Sticky Quick-Book Dock
+   Mobile Sticky Quick-Book Dock (Single Persistent Mobile Contact Bar)
    -------------------------------------------------------------------------- */
 .mobile-sticky-dock {
   display: none;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: 0.75rem 1rem;
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
-  border-top: 1px solid var(--color-border);
-  z-index: 90;
-  align-items: center;
-  gap: 0.75rem;
 }
 
-.dock-call-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.35rem;
-  background: var(--color-primary-soft);
-  color: var(--color-primary);
-  padding: 0.75rem 1rem;
-  border-radius: var(--radius-pill);
-  font-weight: 700;
-  font-size: 0.85rem;
-  border: 1px solid var(--color-border);
-}
+@media (max-width: 768px) {
+  .mobile-sticky-dock {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 95;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(18, 33, 48, 0.08);
+    box-shadow: 0 -4px 20px rgba(18, 33, 48, 0.08);
+    padding: 0.65rem 1rem calc(0.65rem + env(safe-area-inset-bottom, 0px));
+    gap: 0.75rem;
+    align-items: center;
+    transition: transform 0.28s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.25s ease;
+  }
 
-.dock-book-btn {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  background: var(--color-primary);
-  color: #fff;
-  padding: 0.75rem 1.25rem;
-  border-radius: var(--radius-pill);
-  font-weight: 700;
-  font-size: 0.95rem;
-  box-shadow: 0 4px 12px rgba(12, 56, 52, 0.25);
+  body.mobile-nav-open .mobile-sticky-dock {
+    transform: translateY(110%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .dock-btn {
+    flex: 1;
+    height: 52px;
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: var(--radius-pill);
+    text-decoration: none;
+    transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+  }
+
+  .dock-btn:active {
+    transform: scale(0.97);
+  }
+
+  .dock-call-btn {
+    background: #0f4c47;
+    color: #ffffff;
+    border: 1px solid #0c3d39;
+    box-shadow: 0 4px 14px rgba(15, 76, 71, 0.22);
+  }
+
+  .dock-whatsapp-btn {
+    background: #25d366;
+    color: #ffffff;
+    border: 1px solid #20ba5a;
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.22);
+  }
+
+  .floating-whatsapp-wrapper {
+    display: none !important;
+  }
+
+  body {
+    padding-bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .site-footer {
+    padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px)) !important;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -3962,21 +4070,8 @@ button {
     gap: 0.5rem;
     align-items: center;
   }
-  .header-btn-text-desktop {
-    display: none;
-  }
-  .header-btn-text-mobile {
-    display: inline;
-  }
   .btn-header-book {
-    display: inline-flex !important;
-    padding: 0.42rem 0.75rem;
-    font-size: 0.78rem;
-    font-weight: 700;
-    gap: 0.3rem;
-    min-height: 38px;
-    white-space: nowrap;
-    border-radius: var(--radius-pill);
+    display: none !important;
   }
   .mobile-toggle {
     display: flex;
@@ -5916,21 +6011,72 @@ button {
 }
 
 @media (max-width: 900px) {
+  .how-to-visit-section {
+    padding: 3.5rem 0;
+  }
   .steps-container {
-    grid-template-columns: 1fr;
-    gap: 1.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+    position: relative;
+    padding-left: 0;
   }
   .steps-container::before {
-    display: none !important;
+    display: block !important;
+    content: '';
+    position: absolute;
+    left: 36px;
+    top: 28px;
+    bottom: 28px;
+    width: 2px;
+    height: auto;
+    right: auto;
+    background: linear-gradient(180deg, #179b9e 0%, rgba(23, 155, 158, 0.3) 100%);
+    z-index: 1;
+  }
+  .step-card {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: 1.15rem;
+    padding: 1.25rem 1.35rem;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 2px 14px rgba(18, 33, 48, 0.04);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  }
+  .step-card.active-step,
+  .step-card.is-active {
+    border-color: #179b9e;
+    box-shadow: 0 4px 18px rgba(23, 155, 158, 0.15);
+  }
+  .step-number-badge {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    font-size: 0.95rem;
+    margin-bottom: 0;
+    box-shadow: 0 2px 8px rgba(18, 33, 48, 0.15);
+  }
+  .step-card-content {
+    flex: 1;
+    text-align: left;
+  }
+  .step-title {
+    font-size: 1.08rem;
+    margin-bottom: 0.25rem;
+    text-align: left;
+  }
+  .step-desc {
+    font-size: 0.92rem;
+    line-height: 1.48;
+    text-align: left;
   }
   .steps-reception-cta {
-    flex-direction: column;
-    align-items: stretch;
-    text-align: center;
-    padding: 1.5rem 1.25rem;
-  }
-  .steps-cta-actions {
-    justify-content: center;
+    display: none !important;
   }
 }
 
@@ -7277,5 +7423,179 @@ button {
 
 .article-card.highlight-target {
   animation: article-target-glow 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ==========================================================================
+   17. V7.2 MOBILE UI/UX CLEANUP & CONTENT SIMPLIFICATION
+   ========================================================================== */
+
+/* Responsive Text & Desktop-Only Elements */
+.desc-mobile {
+  display: none;
+}
+.desc-desktop {
+  display: inline;
+}
+.desktop-only-element {
+  display: block;
+}
+span.desktop-only-element,
+a.desktop-only-element {
+  display: inline-flex;
+}
+
+/* Consultation Single-Card Centering */
+.consultation-single-card-grid {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.consultation-single-card-grid .option-card {
+  max-width: 640px;
+  width: 100%;
+}
+.option-summary-text {
+  font-size: 0.95rem;
+  color: #4b5d6e;
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  /* 1. Header Cleanup */
+  .btn-header-book {
+    display: none !important;
+  }
+  .header-actions {
+    gap: 0;
+    align-items: center;
+  }
+
+  /* 2. Responsive Content Toggles */
+  .desktop-only-element {
+    display: none !important;
+  }
+  .desc-desktop {
+    display: none !important;
+  }
+  .desc-mobile {
+    display: inline !important;
+  }
+
+  /* 3. Hero Simplification */
+  .medera-top-strip {
+    display: none !important;
+  }
+  .medera-card-brand-row {
+    display: none !important;
+  }
+  .medera-schedule-meta {
+    display: none !important;
+  }
+  .hero-call-btn-desktop,
+  #heroCallScheduleBtn {
+    display: none !important;
+  }
+  .medera-hero-secondary-btn {
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.96rem;
+  }
+  .medera-doctor-card {
+    padding: 1.25rem 1.15rem;
+    border-radius: 18px;
+  }
+  .medera-left-editorial {
+    padding: 0.5rem 0.65rem;
+    order: 1;
+  }
+  .medera-doctor-name {
+    font-size: clamp(1.5rem, 6.2vw, 1.85rem) !important;
+    line-height: 1.25 !important;
+    word-break: normal !important;
+  }
+  .medera-doctor-anchor {
+    order: 2;
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+  }
+  .medera-doctor-cutout {
+    max-height: 330px;
+    width: auto;
+    max-width: 260px;
+  }
+
+  /* 4. Common Health Concerns */
+  .concerns-grid {
+    grid-template-columns: 1fr;
+    gap: 0.95rem;
+  }
+  .concern-card {
+    padding: 1.25rem 1.15rem;
+    border-radius: 16px;
+  }
+  .concern-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+  .concern-desc {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+
+  /* 5. Consultation Options */
+  .option-features-desktop {
+    display: none !important;
+  }
+  .option-card {
+    padding: 1.35rem 1.15rem;
+    border-radius: 18px;
+  }
+
+  /* 6. Doctor Profile */
+  .about-actions .btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 48px;
+  }
+
+  /* 7. Credentials Preview */
+  .credentials-preview-grid {
+    grid-template-columns: 1fr;
+    gap: 0.95rem;
+    margin-top: 1.5rem;
+  }
+  .credential-preview-card {
+    padding: 1.25rem 1.15rem;
+    border-radius: 16px;
+  }
+
+  /* 8. Spacing & Typography */
+  .container {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+  section {
+    padding-top: 3.5rem !important;
+    padding-bottom: 3.5rem !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .brand-tagline {
+    display: none !important;
+  }
+  .brand-name {
+    font-size: 0.88rem;
+  }
+  .nav-container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
 }
 

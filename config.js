@@ -341,23 +341,23 @@ const CLINIC_CONFIG = {
   faqs: [
     {
       question: "Can I walk in for a consultation, or is an appointment mandatory?",
-      answer: "Walk-ins are welcome Monday to Saturday between 9:00 AM and 4:00 PM at EDGE Clinic, HITEC City. Patients with prior scheduled appointments receive priority queuing, so we recommend contacting clinic reception in advance."
+      answer: "Walk-ins are welcome Monday to Saturday between 9:00 AM and 4:00 PM at EDGE Clinic, HITEC City. Priority queuing is given to scheduled visits, so contacting reception in advance is recommended."
     },
     {
       question: "How do I schedule a consultation with Dr. Anusri?",
-      answer: "You can call EDGE Clinic reception at +91 63032 85050 or message via WhatsApp at +91 63032 85050. Our reception team will verify available timings, confirm your visit details, and answer any pre-visit questions."
+      answer: "Call or message EDGE Clinic reception on WhatsApp at +91 63032 85050. Our front desk team verifies available timings and confirms your visit details."
     },
     {
       question: "What payment modes are accepted for consultations?",
-      answer: "We accept Cash, UPI, Debit/Credit Cards, and digital payments for all in-person and scheduled online consultations at EDGE Clinic."
+      answer: "We accept Cash, UPI, Debit/Credit Cards, and popular digital payments at EDGE Clinic reception."
     },
     {
-      question: "Are online (teleconsultation) appointments available?",
-      answer: "Yes. Scheduled teleconsultations are available for follow-up reviews, diagnostic report analysis, chronic disease monitoring, and routine medical consultations if you cannot visit in person."
+      question: "Are online consultations available?",
+      answer: "Online consultations are subject to clinic confirmation. Please check with reception at +91 63032 85050 to inquire about current remote follow-up availability."
     },
     {
       question: "Where is EDGE Clinic located and what are the consultation timings?",
-      answer: "EDGE Clinic is located at The Medical Centre, 4th Floor, Plot No. 27, Huda Techno Park, HITEC City, Hyderabad (250m from Raidurg Metro Station). Dr. Anusri's consultation hours are Monday through Saturday, 9:00 AM to 4:00 PM."
+      answer: "EDGE Clinic is at The Medical Centre (4th Floor, Plot 27), HITEC City, 250m from Raidurg Metro Station. Outpatient hours are Monday to Saturday, 9:00 AM to 4:00 PM."
     }
   ],
 

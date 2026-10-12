@@ -50,7 +50,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=7.1">
+  <link rel="stylesheet" href="styles.css?v=7.2">
 
   <!-- ========================================================================= -->
   <!-- AEO & GEO SCHEMA.ORG STRUCTURED DATA (JSON-LD)                            -->
@@ -269,25 +269,27 @@
         </button>
       </div>
     </div>
-
-    <!-- Mobile Drawer Navigation -->
-    <div class="mobile-nav-drawer" id="mobileNavDrawer">
-      <ul class="mobile-nav-links">
-        <li><a href="/" class="mobile-nav-link">Home</a></li>
-        <li><a href="/about" class="mobile-nav-link">About Dr. Anusri Adusumilli</a></li>
-        <li><a href="/services" class="mobile-nav-link">Clinical Services</a></li>
-        <li><a href="/credentials" class="mobile-nav-link">Qualifications &amp; Credentials</a></li>
-        <li><a href="/health-guides" class="mobile-nav-link">Health Guides</a></li>
-        <li><a href="/visit" class="mobile-nav-link">Clinic Location &amp; Directions</a></li>
-      </ul>
-      <div class="mobile-drawer-footer">
-        <a href="tel:+916303285050" class="btn btn-secondary btn-block">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-          Call Reception
-        </a>
-      </div>
-    </div>
   </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-top">
+      <span class="mobile-drawer-brand">EDGE Clinic</span>
+      <button type="button" class="mobile-drawer-close" id="mobileCloseBtn" aria-label="Close navigation menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <nav class="mobile-drawer-nav">
+      <ul class="mobile-nav-links">
+        <li><a href="/" class="mobile-nav-link active">Home</a></li>
+        <li><a href="/about" class="mobile-nav-link">About Doctor</a></li>
+        <li><a href="/services" class="mobile-nav-link">Services</a></li>
+        <li><a href="/credentials" class="mobile-nav-link">Credentials</a></li>
+        <li><a href="/health-guides" class="mobile-nav-link">Health Guides</a></li>
+        <li><a href="/visit" class="mobile-nav-link">Visit &amp; Map</a></li>
+      </ul>
+    </nav>
+  </div>
 
   <main id="main-content">
     
@@ -405,11 +407,14 @@
                 <span class="hero-line"><span class="hero-line-inner">General Medicine Care</span></span>
                 <span class="hero-line"><span class="hero-line-inner">in HITEC City.</span></span>
               </h1>
-              <p class="medera-doctor-desc motion-hero-desc">Consult Dr. Anusri Adusumilli for common illnesses, ongoing health concerns, chronic condition management and preventive care at EDGE Clinic.</p>
+              <p class="medera-doctor-desc motion-hero-desc">
+                <span class="desc-desktop">Consult Dr. Anusri Adusumilli for common illnesses, ongoing health concerns, chronic condition management and preventive care at EDGE Clinic.</span>
+                <span class="desc-mobile">Consult Dr. Anusri for common illnesses, diabetes, blood pressure and preventive healthcare at EDGE Clinic.</span>
+              </p>
               
               <!-- Clean Action CTA Row -->
               <div class="medera-hero-cta-row motion-hero-ctas">
-                <a href="tel:+916303285050" class="btn btn-primary medera-hero-cta-btn" id="heroCallScheduleBtn" data-magnetic>
+                <a href="tel:+916303285050" class="btn btn-primary medera-hero-cta-btn hero-call-btn-desktop" id="heroCallScheduleBtn" data-magnetic>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                   <span>Call to Schedule</span>
                 </a>
@@ -501,7 +506,10 @@
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
             </div>
             <h3 class="concern-title">Fever &amp; Common Illnesses</h3>
-            <p class="concern-desc">Consultations for fever, cough, cold, seasonal infections and other common illnesses, with appropriate medical evaluation and treatment guidance.</p>
+            <p class="concern-desc">
+              <span class="desc-desktop">Consultations for fever, cough, cold, seasonal infections and other common illnesses, with appropriate medical evaluation and treatment guidance.</span>
+              <span class="desc-mobile">Consultation and medical treatment for fevers, respiratory infections, seasonal illnesses and acute symptoms.</span>
+            </p>
             <a href="/services#fever-illnesses" class="concern-action">Learn More →</a>
           </div>
 
@@ -511,7 +519,10 @@
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
             </div>
             <h3 class="concern-title">Diabetes Management</h3>
-            <p class="concern-desc">Support for managing blood sugar levels, diabetes monitoring, medication reviews and healthy lifestyle choices.</p>
+            <p class="concern-desc">
+              <span class="desc-desktop">Support for managing blood sugar levels, diabetes monitoring, medication reviews and healthy lifestyle choices.</span>
+              <span class="desc-mobile">Blood sugar evaluation, personalized medication reviews, diabetes monitoring and lifestyle guidance.</span>
+            </p>
             <a href="/services#diabetes-metabolic" class="concern-action">Learn More →</a>
           </div>
 
@@ -521,7 +532,10 @@
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0 0-7.65z"/><polyline points="3.5 12 6.5 12 9 8 13 16 15.5 12 20.5 12"/></svg>
             </div>
             <h3 class="concern-title">Blood Pressure &amp; Heart Health</h3>
-            <p class="concern-desc">Blood pressure monitoring, hypertension management and guidance on reducing cardiovascular risk.</p>
+            <p class="concern-desc">
+              <span class="desc-desktop">Blood pressure monitoring, hypertension management and guidance on reducing cardiovascular risk.</span>
+              <span class="desc-mobile">Hypertension monitoring, cardiovascular health checkups and preventive blood pressure management.</span>
+            </p>
             <a href="/services#hypertension-cardio" class="concern-action">Learn More →</a>
           </div>
 
@@ -531,7 +545,10 @@
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4c0 3 4 7 4 7s4-4 4-7a4 4 0 0 0-4-4z"/><circle cx="12" cy="18" r="3"/></svg>
             </div>
             <h3 class="concern-title">Thyroid &amp; Metabolic Conditions</h3>
-            <p class="concern-desc">Evaluation and ongoing management of thyroid disorders, cholesterol concerns, fatty liver and related metabolic conditions.</p>
+            <p class="concern-desc">
+              <span class="desc-desktop">Evaluation and ongoing management of thyroid disorders, cholesterol concerns, fatty liver and related metabolic conditions.</span>
+              <span class="desc-mobile">Clinical care for thyroid imbalances, cholesterol management, fatty liver and metabolic health.</span>
+            </p>
             <a href="/services#thyroid-metabolic" class="concern-action">Learn More →</a>
           </div>
 
@@ -541,7 +558,10 @@
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M17 11l2 2 4-4"/></svg>
             </div>
             <h3 class="concern-title">Senior Citizen &amp; Preventive Care</h3>
-            <p class="concern-desc">General health assessments, medication reviews, preventive screenings and ongoing care for older adults.</p>
+            <p class="concern-desc">
+              <span class="desc-desktop">General health assessments, medication reviews, preventive screenings and ongoing care for older adults.</span>
+              <span class="desc-mobile">Comprehensive geriatric checkups, routine health screenings and preventive care for older adults.</span>
+            </p>
             <a href="/services#geriatric-prevention" class="concern-action">Learn More →</a>
           </div>
 
@@ -551,7 +571,10 @@
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
             </div>
             <h3 class="concern-title">Complex Symptoms &amp; Follow-up Care</h3>
-            <p class="concern-desc">Medical evaluation of persistent or unexplained symptoms, coordination of ongoing care and follow-up consultations.</p>
+            <p class="concern-desc">
+              <span class="desc-desktop">Medical evaluation of persistent or unexplained symptoms, coordination of ongoing care and follow-up consultations.</span>
+              <span class="desc-mobile">Diagnostic evaluation for unexplained symptoms, second opinions and coordinated follow-up care.</span>
+            </p>
             <a href="/services#complex-diagnostics" class="concern-action">Learn More →</a>
           </div>
         </div>
@@ -570,21 +593,24 @@
     <section class="consultation-options-section" id="services">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-tag">Consultation Formats</span>
+          <span class="section-tag">Clinical Consultations</span>
           <h2 class="section-heading">Consultation Options</h2>
-          <p class="section-subheading">Choose between comprehensive in-clinic evaluations at EDGE Clinic or scheduled remote teleconsultations.</p>
+          <p class="section-subheading">Comprehensive in-person medical evaluations and personalized care at EDGE Clinic, HITEC City.</p>
         </div>
 
-        <div class="consultation-options-grid">
+        <div class="consultation-options-grid consultation-single-card-grid">
           <!-- Option 1: In-Clinic -->
           <div class="option-card" data-motion-pair="left">
             <span class="option-type-tag">In-Person Consultation</span>
             <h3 class="option-title">In-Clinic Consultation</h3>
             <div class="option-fee-row">
               <span class="option-fee">In-Person Visit</span>
-              <span class="option-fee-meta">• Mon–Sat</span>
+              <span class="option-fee-meta">• Mon–Sat, 9:00 AM – 4:00 PM</span>
             </div>
-            <ul class="option-features-list">
+            <p class="option-summary-text">
+              Comprehensive in-person medical evaluation, physical examination, diagnosis and personalized treatment at EDGE Clinic, HITEC City. Walk-ins and scheduled appointments welcome.
+            </p>
+            <ul class="option-features-list option-features-desktop">
               <li>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
                 <span><strong>Detailed Clinical Examination:</strong> Comprehensive physical evaluation &amp; vital signs assessment</span>
@@ -610,39 +636,16 @@
             </div>
           </div>
 
-          <!-- Option 2: Teleconsultation -->
-          <div class="option-card" data-motion-pair="right">
+          <!-- FLAG FOR CLINIC CONFIRMATION: Online consultations are not confirmed in the doctor's original information form. Public promotional card hidden until verified. -->
+          <div class="option-card option-card-teleconsult unverified-service-hidden" style="display: none;" aria-hidden="true" data-motion-pair="right">
             <span class="option-type-tag">Remote Consultation</span>
             <h3 class="option-title">Online / Follow-up Consult</h3>
             <div class="option-fee-row">
               <span class="option-fee">Teleconsultation</span>
-              <span class="option-fee-meta">• Audio / Video</span>
-            </div>
-            <ul class="option-features-list">
-              <li>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span><strong>Remote Medical Review:</strong> Audio or video call for report discussion and progress evaluation</span>
-              </li>
-              <li>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span><strong>Digital Prescriptions:</strong> Verifiable medical prescription shared via WhatsApp or email</span>
-              </li>
-              <li>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span><strong>Best For:</strong> Routine follow-ups, blood test reviews, and non-emergency guidance</span>
-              </li>
-              <li>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span><strong>Coordination:</strong> Coordinated through EDGE Clinic reception on WhatsApp</span>
-              </li>
-            </ul>
-            <div class="option-actions">
-              <a href="https://wa.me/916303285050?text=Hello%20EDGE%20Clinic,%20I%20would%20like%20to%20inquire%20about%20an%20online%20consultation%20with%20Dr.%20Anusri" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-block" data-magnetic>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/></svg>
-                <span>Inquire via WhatsApp</span>
-              </a>
+              <span class="option-fee-meta">• Subject to Confirmation</span>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>
@@ -675,12 +678,12 @@
             Consultant Physician specializing in adult &amp; geriatric medicine, acute infectious diseases, metabolic disorders, and complex medical diagnostics at EDGE Clinic.
           </p>
 
-          <div class="quote-callout minimal-quote">
+          <div class="quote-callout minimal-quote desktop-only-element">
             <p>“Rooted in attentive listening, meticulous clinical examination, and clear diagnoses that empower patients.”</p>
             <cite>— Dr. Anusri Adusumilli | Consultant General Physician</cite>
           </div>
 
-          <!-- Doctor Key Highlights Minimal Ribbon -->
+          <!-- Doctor Key Highlights Ribbon -->
           <div class="about-highlights-ribbon">
             <div class="highlight-chip">
               <span class="chip-icon">
@@ -700,7 +703,7 @@
                 <span>Neurology &amp; Internal Medicine</span>
               </div>
             </div>
-            <div class="highlight-chip">
+            <div class="highlight-chip desktop-only-element">
               <span class="chip-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
               </span>
@@ -709,7 +712,7 @@
                 <span>Telugu, English, Hindi, Kannada</span>
               </div>
             </div>
-            <div class="highlight-chip">
+            <div class="highlight-chip desktop-only-element">
               <span class="chip-icon">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
               </span>
@@ -722,7 +725,7 @@
 
           <div class="about-actions">
             <a href="/about" class="btn btn-primary">View Full Profile</a>
-            <a href="/credentials" class="btn btn-secondary">View Clinical Credentials</a>
+            <a href="/credentials" class="btn btn-secondary desktop-only-element">View Clinical Credentials</a>
           </div>
         </div>
 
@@ -748,27 +751,33 @@
           <!-- Step 1 -->
           <div class="step-card" data-step="1">
             <div class="step-number-badge">1</div>
-            <h3 class="step-title">Contact Reception</h3>
-            <p class="step-desc">Call or message EDGE Clinic with your preferred consultation date and timing.</p>
+            <div class="step-card-content">
+              <h3 class="step-title">Contact Reception</h3>
+              <p class="step-desc">Call or message EDGE Clinic with your preferred consultation date and timing.</p>
+            </div>
           </div>
 
           <!-- Step 2 -->
           <div class="step-card" data-step="2">
             <div class="step-number-badge">2</div>
-            <h3 class="step-title">Confirm Your Visit</h3>
-            <p class="step-desc">Reception checks availability and provides your consultation timing and visit details.</p>
+            <div class="step-card-content">
+              <h3 class="step-title">Confirm Your Visit</h3>
+              <p class="step-desc">Reception checks availability and provides your consultation timing and visit details.</p>
+            </div>
           </div>
 
           <!-- Step 3 -->
           <div class="step-card" data-step="3">
             <div class="step-number-badge">3</div>
-            <h3 class="step-title">Visit EDGE Clinic</h3>
-            <p class="step-desc">Arrive at The Medical Centre, 4th Floor Plot 27, HITEC City, for your consultation.</p>
+            <div class="step-card-content">
+              <h3 class="step-title">Visit EDGE Clinic</h3>
+              <p class="step-desc">Arrive at The Medical Centre, 4th Floor Plot 27, HITEC City, for your consultation.</p>
+            </div>
           </div>
         </div>
 
         <!-- Reception Direct Action Strip -->
-        <div class="steps-reception-cta">
+        <div class="steps-reception-cta desktop-only-element">
           <div class="steps-cta-info">
             <strong>Ready to arrange your consultation?</strong>
             <p>Our front desk team is available Mon–Sat from 9:00 AM to 4:00 PM to assist you.</p>
@@ -829,7 +838,7 @@
           </div>
 
           <!-- Credential Highlight 3: TNSCON Research Recognition -->
-          <div class="credential-preview-card">
+          <div class="credential-preview-card desktop-only-element">
             <div class="cred-crest-icon" aria-hidden="true">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
             </div>
@@ -936,7 +945,7 @@
             <a href="/health-guides#healthFaqs" class="btn btn-secondary btn-sm">
               View Medical Condition FAQs →
             </a>
-            <a href="tel:+916303285050" class="btn btn-outline btn-sm">
+            <a href="tel:+916303285050" class="btn btn-outline btn-sm desktop-only-element">
               Call Reception
             </a>
           </div>
@@ -1146,14 +1155,17 @@
   <!-- ========================================== -->
   <!-- 12. STICKY MOBILE QUICK-BOOK DOCK          -->
   <!-- ========================================== -->
-  <div class="mobile-sticky-dock">
-    <a href="tel:+916303285050" class="dock-call-btn" aria-label="Call Clinic Reception">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+  <!-- ========================================== -->
+  <!-- 12. STICKY MOBILE QUICK-BOOK DOCK          -->
+  <!-- ========================================== -->
+  <div class="mobile-sticky-dock" id="mobileStickyDock" aria-label="Quick Contact Actions">
+    <a href="tel:+916303285050" class="dock-btn dock-call-btn" aria-label="Call Clinic Reception">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
       <span>Call</span>
     </a>
-    <a href="https://wa.me/916303285050?text=Hello%20EDGE%20Clinic,%20I%20would%20like%20to%20inquire%20about%20an%20appointment%20with%20Dr.%20Anusri%20Adusumilli" target="_blank" rel="noopener noreferrer" class="dock-book-btn" style="background:#25d366; border-color:#20ba5a;">
+    <a href="https://wa.me/916303285050?text=Hello%20EDGE%20Clinic,%20I%20would%20like%20to%20inquire%20about%20an%20appointment" target="_blank" rel="noopener noreferrer" class="dock-btn dock-whatsapp-btn" aria-label="Message Clinic on WhatsApp">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/></svg>
       <span>WhatsApp</span>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
     </a>
   </div>
 
@@ -1170,7 +1182,7 @@
             <img src="./assets/images/dr-anusri-horizontal-dark-tight.png" alt="Dr. Anusri Adusumilli - MBBS, MD | General Physician" class="footer-brand-logo-img" width="260">
           </a>
         </div>
-        <p class="footer-bio-summary">
+        <p class="footer-bio-summary desktop-only-element">
           Consultant Physician at EDGE Clinic, HITEC City. Evidence-based care in adult internal medicine &amp; chronic disease management.
         </p>
         <div class="footer-badges-row">
@@ -1186,7 +1198,7 @@
       </div>
 
       <!-- Column 2: Quick Links -->
-      <div class="footer-col links-col">
+      <div class="footer-col links-col desktop-only-element">
         <h4 class="footer-heading">Pages &amp; Navigation</h4>
         <ul class="footer-links">
           <li><a href="/">Home</a></li>
@@ -1276,7 +1288,7 @@
   <!-- Scripts -->
   <script src="assets/vendor/gsap.min.js"></script>
   <script src="assets/vendor/ScrollTrigger.min.js"></script>
-  <script src="config.js?v=7.1"></script>
-  <script src="app.js?v=7.1"></script>
+  <script src="config.js?v=7.2"></script>
+  <script src="app.js?v=7.2"></script>
 </body>
 </html>

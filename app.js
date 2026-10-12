@@ -1429,10 +1429,14 @@
   }
 
   function setupMobileMenu() {
+    cacheElements();
     if (!elements.mobileToggle || !elements.mobileNavDrawer) return;
+
+    const closeBtn = document.getElementById('mobileCloseBtn');
 
     function openMobileDrawer() {
       elements.mobileNavDrawer.classList.add('open');
+      elements.mobileNavDrawer.setAttribute('aria-hidden', 'false');
       elements.mobileToggle.classList.add('active');
       elements.mobileToggle.setAttribute('aria-expanded', 'true');
       document.body.classList.add('mobile-nav-open');
@@ -1440,12 +1444,13 @@
 
     function closeMobileDrawer() {
       elements.mobileNavDrawer.classList.remove('open');
+      elements.mobileNavDrawer.setAttribute('aria-hidden', 'true');
       elements.mobileToggle.classList.remove('active');
       elements.mobileToggle.setAttribute('aria-expanded', 'false');
       document.body.classList.remove('mobile-nav-open');
     }
 
-    elements.mobileToggle.addEventListener('click', (e) => {
+    elements.mobileToggle.onclick = (e) => {
       e.stopPropagation();
       const isOpen = elements.mobileNavDrawer.classList.contains('open');
       if (isOpen) {
@@ -1453,7 +1458,14 @@
       } else {
         openMobileDrawer();
       }
-    });
+    };
+
+    if (closeBtn) {
+      closeBtn.onclick = (e) => {
+        e.stopPropagation();
+        closeMobileDrawer();
+      };
+    }
 
     // Close when clicking any mobile nav link or button inside drawer
     elements.mobileNavDrawer.querySelectorAll('.mobile-nav-link, a, .mobile-close-btn, button').forEach(link => {
