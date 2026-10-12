@@ -1,0 +1,24 @@
+# Robots.txt for Dr. Anusri Adusumalli Clinic
+# Optimized for Web Crawlers & AI Answer Engines (AEO)
+
+User-agent: *
+Allow: /
+
+# Dedicated AI Answer Engine Crawlers (Perplexity, ChatGPT, Claude)
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Sitemap Location
+Sitemap: https://www.dranusri.com/sitemap.xml

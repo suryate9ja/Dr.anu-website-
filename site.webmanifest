@@ -1,0 +1,21 @@
+{
+  "name": "Dr. Anusri Adusumalli Clinic",
+  "short_name": "Dr. Anusri",
+  "description": "General Physician & Primary Care Consultant Doctor Appointment Booking",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#122130",
+  "theme_color": "#122130",
+  "icons": [
+    {
+      "src": "./assets/images/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/images/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

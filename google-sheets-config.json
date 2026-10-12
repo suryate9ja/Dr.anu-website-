@@ -1,0 +1,9 @@
+{
+  "_comment": "Configure either Option A (Google Apps Script) OR Option B (Google Service Account JSON). Do NOT share this file publicly if it contains private keys.",
+  
+  "googleAppsScriptUrl": "https://script.google.com/macros/s/AKfycbyteIGKesFqGN83KTlAOpfv0aBAQyCwNf2D4U6YlHe2E9fS_uI2lVZDnc-UVhlF-F_GTQ/exec",
+  
+  "sheetId": "",
+  "sheetTabName": "Sheet1",
+  "credentialsFile": "./credentials/google-service-account.json"
+}

@@ -1,0 +1,17 @@
+# Environment variables and secrets
+.env
+.env.local
+credentials/
+*.pem
+google-service-account*.json
+
+# Data files
+data/
+
+# OS and node files
+.DS_Store
+node_modules/
+
+# Root debug and preview screenshots (keep assets/ intact)
+/*.png
+test_frame.html
