@@ -143,6 +143,7 @@
     setupCopyAddress();
     setupMobileMenu();
     setupSoftScrollEffects();
+    initCinematicMotionSystem();
   }
 
   /* ==========================================================================
@@ -260,7 +261,9 @@
             </svg>
           </button>
           <div class="faq-content">
-            ${faq.answer.split('\n\n').map(p => `<p class="faq-para">${escapeHtml(p)}</p>`).join('')}
+            <div class="faq-content-inner">
+              ${faq.answer.split('\n\n').map(p => `<p class="faq-para">${escapeHtml(p)}</p>`).join('')}
+            </div>
           </div>
         </div>
       `).join('');
@@ -1456,6 +1459,476 @@
           header.classList.remove('scrolled');
         }
       }, { passive: true });
+    }
+  }
+
+  /* ==========================================================================
+     EDGE CLINIC V7 — AWARD-CALIBRE MOTION EXPERIENCE ENGINE
+     Theme: Clinical Futurism (Restrained, Fluid, Cinematic, GPU-Accelerated)
+     ========================================================================== */
+  function initCinematicMotionSystem() {
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const hasGsap = typeof window.gsap !== 'undefined';
+    const hasScrollTrigger = typeof window.ScrollTrigger !== 'undefined';
+
+    // 1. Sensible Reduced Motion Handling
+    if (prefersReducedMotion) {
+      document.querySelectorAll(
+        '.hero-line-inner, .motion-hero-top, .motion-hero-eyebrow, .motion-hero-desc, ' +
+        '.motion-hero-ctas, .motion-hero-schedule, .medera-doctor-cutout, .motion-fade-up, ' +
+        '.concern-card, .option-card, .essential-card, .step-card, .article-card, .dna-strand, .dna-rung'
+      ).forEach(el => {
+        el.classList.add('is-revealed', 'is-inview', 'is-drawn');
+      });
+      const progressBar = document.getElementById('stepsProgressBar');
+      if (progressBar) progressBar.style.width = '100%';
+      return;
+    }
+
+    if (hasGsap && hasScrollTrigger) {
+      window.gsap.registerPlugin(window.ScrollTrigger);
+    }
+
+    // 2. Initial Hero Entrance Choreography (Phase 2)
+    animateHeroEntrance(hasGsap);
+
+    // 3. Desktop Hero Background Parallax (Phase 2 & 10)
+    setupHeroParallax(hasGsap);
+
+    // 4. Desktop Magnetic Button Pointer Physics (Phase 3)
+    setupMagneticButtons();
+
+    // 5. Section Staggered Reveals (Phase 4, 5, 6, 8, 9)
+    setupSectionReveals(hasGsap);
+
+    // 6. Signature Patient Journey Scroll Experience (Phase 7)
+    setupPatientJourneyExperience(hasGsap);
+  }
+
+  function animateHeroEntrance(hasGsap) {
+    const heroSection = document.getElementById('hero');
+    if (!heroSection) return;
+
+    if (hasGsap) {
+      const tl = window.gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+      // Top strip badges
+      tl.to('.motion-hero-top', { opacity: 1, y: 0, duration: 0.6 }, 0.05);
+
+      // Eyebrow tag
+      tl.to('.motion-hero-eyebrow', { opacity: 1, y: 0, duration: 0.55 }, 0.15);
+
+      // 2-line heading reveal
+      tl.to('.hero-line-inner', {
+        y: '0%',
+        opacity: 1,
+        duration: 0.85,
+        stagger: 0.12,
+        ease: 'power3.out'
+      }, 0.25);
+
+      // Supporting description
+      tl.to('.motion-hero-desc', { opacity: 1, y: 0, duration: 0.7 }, 0.45);
+
+      // CTAs with gentle spring
+      tl.to('.motion-hero-ctas', { opacity: 1, y: 0, duration: 0.65, ease: 'back.out(1.2)' }, 0.58);
+
+      // Schedule meta pill
+      tl.to('.motion-hero-schedule', { opacity: 1, y: 0, duration: 0.55 }, 0.7);
+
+      // Doctor Cutout Portrait reveal (smooth scale & opacity, keeping face stable and visually natural)
+      tl.to('.medera-doctor-cutout', {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.95,
+        ease: 'power2.out'
+      }, 0.2);
+
+      // DNA Helix & Molecular artwork line drawing
+      tl.to('.dna-strand', {
+        strokeDashoffset: 0,
+        duration: 1.8,
+        stagger: 0.2,
+        ease: 'power2.inOut'
+      }, 0.3);
+
+      tl.to('.dna-rung', {
+        strokeDashoffset: 0,
+        duration: 1.2,
+        stagger: 0.04,
+        ease: 'power2.out'
+      }, 0.6);
+
+      tl.to('.molecular-cluster line', {
+        strokeDashoffset: 0,
+        duration: 1.2,
+        stagger: 0.08,
+        ease: 'power2.out'
+      }, 0.7);
+
+      tl.to('.molecular-cluster circle, .dna-helix-group circle', {
+        opacity: 1,
+        scale: 1,
+        duration: 0.6,
+        stagger: 0.03,
+        ease: 'back.out(1.4)'
+      }, 0.8);
+
+    } else {
+      // Graceful CSS transition fallback
+      requestAnimationFrame(() => {
+        document.querySelectorAll(
+          '.motion-hero-top, .motion-hero-eyebrow, .hero-line-inner, ' +
+          '.motion-hero-desc, .motion-hero-ctas, .motion-hero-schedule, ' +
+          '.medera-doctor-cutout, .dna-strand, .dna-rung, .molecular-cluster line'
+        ).forEach(el => {
+          el.classList.add('is-revealed', 'is-drawn');
+        });
+      });
+    }
+  }
+
+  function setupHeroParallax(hasGsap) {
+    if (!hasGsap) return;
+    // Only desktop pointer fine displays
+    if (window.innerWidth <= 991) return;
+
+    const heroStage = document.querySelector('.medera-hero-stage');
+    if (!heroStage) return;
+
+    window.gsap.to('.medera-dna-backdrop', {
+      y: 40,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '#hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 0.6
+      }
+    });
+
+    // Subtle natural depth around doctor figure without face distortion
+    window.gsap.to('.medera-doctor-cutout', {
+      y: 18,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '#hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 0.6
+      }
+    });
+  }
+
+  function setupMagneticButtons() {
+    // Only enabled for desktop devices with precise pointer
+    if (window.matchMedia && !window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      return;
+    }
+
+    const magneticElements = document.querySelectorAll('[data-magnetic]');
+    magneticElements.forEach(btn => {
+      let isHovered = false;
+
+      btn.addEventListener('mouseenter', () => {
+        isHovered = true;
+      });
+
+      btn.addEventListener('mousemove', (e) => {
+        if (!isHovered) return;
+        const rect = btn.getBoundingClientRect();
+        const btnCenterX = rect.left + rect.width / 2;
+        const btnCenterY = rect.top + rect.height / 2;
+
+        const deltaX = (e.clientX - btnCenterX) * 0.22;
+        const deltaY = (e.clientY - btnCenterY) * 0.22;
+
+        btn.style.transform = `translate3d(${deltaX.toFixed(2)}px, ${deltaY.toFixed(2)}px, 0)`;
+      });
+
+      btn.addEventListener('mouseleave', () => {
+        isHovered = false;
+        btn.style.transform = 'translate3d(0, 0, 0)';
+      });
+    });
+  }
+
+  function setupSectionReveals(hasGsap) {
+    if (hasGsap && typeof window.ScrollTrigger !== 'undefined') {
+      // 1. Clinic Quick Information Essentials Strip
+      if (document.querySelector('.clinic-essentials-grid')) {
+        window.gsap.fromTo('.clinic-essentials-grid .essential-card', 
+          { opacity: 0, y: 20 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            stagger: 0.08,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: '.clinic-essentials-section',
+              start: 'top 85%'
+            }
+          }
+        );
+      }
+
+      // 2. Common Health Concerns (3-column staggered reveal)
+      if (document.querySelector('.concerns-grid')) {
+        window.gsap.fromTo('.concerns-grid .concern-card',
+          { opacity: 0, y: 24 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.65,
+            stagger: 0.08,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: '#common-concerns',
+              start: 'top 80%'
+            }
+          }
+        );
+      }
+
+      // 3. Consultation Options (Paired Composition)
+      const leftOption = document.querySelector('[data-motion-pair="left"]');
+      const rightOption = document.querySelector('[data-motion-pair="right"]');
+      if (leftOption && rightOption) {
+        window.gsap.fromTo(leftOption,
+          { opacity: 0, x: -24, y: 16 },
+          {
+            opacity: 1,
+            x: 0,
+            y: 0,
+            duration: 0.75,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: '#services',
+              start: 'top 80%'
+            }
+          }
+        );
+        window.gsap.fromTo(rightOption,
+          { opacity: 0, x: 24, y: 16 },
+          {
+            opacity: 1,
+            x: 0,
+            y: 0,
+            duration: 0.75,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: '#services',
+              start: 'top 80%'
+            }
+          }
+        );
+      }
+
+      // 4. Physician Profile Reveal (#about)
+      if (document.querySelector('#about')) {
+        window.gsap.fromTo('.about-image-frame',
+          { opacity: 0, scale: 0.96, y: 20 },
+          {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 0.8,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: '#about',
+              start: 'top 80%'
+            }
+          }
+        );
+        window.gsap.fromTo('.about-highlights-ribbon .highlight-chip',
+          { opacity: 0, y: 16 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.55,
+            stagger: 0.08,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: '.about-highlights-ribbon',
+              start: 'top 88%'
+            }
+          }
+        );
+      }
+
+      // 5. Clinical Credentials Preview
+      if (document.querySelector('#credentials-preview')) {
+        window.gsap.fromTo('#credentials-preview .credentials-preview-card, #credentials-preview .reg-card-mini',
+          { opacity: 0, y: 22 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.65,
+            stagger: 0.1,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: '#credentials-preview',
+              start: 'top 82%'
+            }
+          }
+        );
+      }
+
+      // 6. Health Guides Articles
+      if (document.querySelector('#articles')) {
+        window.gsap.fromTo('#articles .article-card',
+          { opacity: 0, y: 24 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            stagger: 0.12,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: '#articles',
+              start: 'top 82%'
+            }
+          }
+        );
+      }
+
+      // 7. FAQs Stagger
+      if (document.querySelector('#faqs')) {
+        window.gsap.fromTo('#faqs .faq-card',
+          { opacity: 0, y: 18 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.55,
+            stagger: 0.07,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: '#faqs',
+              start: 'top 82%'
+            }
+          }
+        );
+      }
+
+      // 8. Location Panel & Map Reveal
+      if (document.querySelector('#location')) {
+        window.gsap.fromTo('#location .location-card',
+          { opacity: 0, x: -24 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.75,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: '#location',
+              start: 'top 82%'
+            }
+          }
+        );
+        window.gsap.fromTo('#location .location-map-wrap',
+          { opacity: 0, x: 24 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.75,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: '#location',
+              start: 'top 82%'
+            }
+          }
+        );
+      }
+
+    } else {
+      // Fallback: IntersectionObserver for native browser environments
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-inview');
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'none';
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll(
+        '.concern-card, .option-card, .essential-card, .article-card, ' +
+        '.about-image-frame, .highlight-chip, .location-card, .location-map-wrap'
+      ).forEach(el => observer.observe(el));
+    }
+  }
+
+  function setupPatientJourneyExperience(hasGsap) {
+    const journeySection = document.getElementById('how-to-visit');
+    const progressBar = document.getElementById('stepsProgressBar');
+    const stepCards = document.querySelectorAll('#how-to-visit .step-card');
+    if (!journeySection || stepCards.length === 0) return;
+
+    const isDesktop = window.innerWidth > 900;
+
+    if (hasGsap && typeof window.ScrollTrigger !== 'undefined' && isDesktop) {
+      // Connect progress fill and sequential activation
+      window.ScrollTrigger.create({
+        trigger: journeySection,
+        start: 'top 75%',
+        end: 'bottom 65%',
+        onUpdate: (self) => {
+          const progress = self.progress;
+          if (progressBar) {
+            progressBar.style.width = `${Math.min(100, Math.max(0, progress * 100))}%`;
+          }
+
+          // Step 1: Contact Reception (active 0.1 to 0.45)
+          // Step 2: Confirm Your Visit (active 0.45 to 0.8)
+          // Step 3: Visit EDGE Clinic (active 0.8 to 1.0)
+          if (stepCards[0]) {
+            if (progress >= 0.1 && progress < 0.45) {
+              stepCards[0].classList.add('active-step');
+              stepCards[0].classList.remove('completed-step');
+            } else if (progress >= 0.45) {
+              stepCards[0].classList.remove('active-step');
+              stepCards[0].classList.add('completed-step');
+            } else {
+              stepCards[0].classList.remove('active-step', 'completed-step');
+            }
+          }
+
+          if (stepCards[1]) {
+            if (progress >= 0.45 && progress < 0.8) {
+              stepCards[1].classList.add('active-step');
+              stepCards[1].classList.remove('completed-step');
+            } else if (progress >= 0.8) {
+              stepCards[1].classList.remove('active-step');
+              stepCards[1].classList.add('completed-step');
+            } else {
+              stepCards[1].classList.remove('active-step', 'completed-step');
+            }
+          }
+
+          if (stepCards[2]) {
+            if (progress >= 0.8) {
+              stepCards[2].classList.add('active-step');
+              stepCards[2].classList.remove('completed-step');
+            } else {
+              stepCards[2].classList.remove('active-step', 'completed-step');
+            }
+          }
+        }
+      });
+    } else {
+      // Progressive vertical reveal on mobile or fallback
+      const stepObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active-step');
+          }
+        });
+      }, { threshold: 0.35 });
+
+      stepCards.forEach(c => stepObserver.observe(c));
     }
   }
 
