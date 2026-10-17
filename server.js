@@ -62,7 +62,9 @@ const MIME_TYPES = {
   '.ico': 'image/x-icon',
   '.txt': 'text/plain',
   '.xml': 'application/xml',
-  '.webmanifest': 'application/manifest+json'
+  '.webmanifest': 'application/manifest+json',
+  '.webp': 'image/webp',
+  '.avif': 'image/avif'
 };
 
 // Main HTTP Server
@@ -234,17 +236,28 @@ const server = http.createServer((req, res) => {
   let safePath = path.normalize(pathname).replace(/^(\.\.[\/\\])+/, '');
   if (safePath === '/' || safePath === '') safePath = '/index.html';
   
+  if (pathname === '/visit' || pathname === '/visit/' || pathname === '/visit.html') {
+    res.writeHead(301, { 'Location': '/contact/' });
+    res.end();
+    return;
+  }
+
   // Clean URL mapping for dedicated V6 routes
   const cleanRouteMap = {
     '/about': '/about.html',
     '/services': '/services.html',
     '/credentials': '/credentials.html',
     '/health-guides': '/health-guides.html',
-    '/visit': '/visit.html'
+    '/contact': '/contact.html',
+    '/contact/': '/contact.html'
   };
+
+  const normalizedPath = pathname.endsWith('/') && pathname.length > 1 ? pathname.slice(0, -1) : pathname;
 
   if (cleanRouteMap[pathname]) {
     safePath = cleanRouteMap[pathname];
+  } else if (cleanRouteMap[normalizedPath]) {
+    safePath = cleanRouteMap[normalizedPath];
   } else if (pathname.startsWith('/health-guides/')) {
     safePath = '/health-guides.html';
   }

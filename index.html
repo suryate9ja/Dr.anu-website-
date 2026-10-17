@@ -231,209 +231,65 @@
   <!-- ========================================== -->
   <header class="site-header" id="header">
     <div class="container nav-container">
-      <a href="#hero" class="brand-logo" aria-label="Dr. Anusri Adusumilli - Consultant General Physician">
-        <div class="logo-mark emblem-mark">
-          <img src="./assets/images/dr-anusri-emblem.png" alt="Dr. Anusri Adusumilli Logo Emblem" class="brand-emblem-graphic" width="38" height="24">
-        </div>
-        <div class="logo-text">
-          <span class="brand-name">Dr. Anusri Adusumilli</span>
-          <span class="brand-tagline">General Physician • HITEC City</span>
-        </div>
-      </a>
+      <div class="header-col-left" aria-hidden="true"></div>
 
-      <!-- Desktop Nav Links -->
-      <nav class="main-nav" aria-label="Main Navigation">
-        <ul class="nav-links">
-          <li><a href="/" class="nav-link active">Home</a></li>
-          <li><a href="/about" class="nav-link">About</a></li>
-          <li><a href="/services" class="nav-link">Services</a></li>
-          <li><a href="/credentials" class="nav-link">Credentials</a></li>
-          <li><a href="/health-guides" class="nav-link">Health Guides</a></li>
-          <li><a href="/visit" class="nav-link">Visit &amp; Map</a></li>
-        </ul>
-      </nav>
-
-      <!-- Header CTAs (Single Primary CTA: Call) -->
-      <div class="header-actions">
-        <a href="tel:+916303285050" class="btn btn-primary btn-header-book" id="navBookBtn" data-magnetic aria-label="Call Clinic">
-          <svg class="header-call-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-          <span class="header-btn-text-desktop">Call to Schedule</span>
-          <span class="header-btn-text-mobile">Call</span>
+      <div class="header-col-center">
+        <a href="/" class="brand-logo" aria-label="Dr. Anusri Adusumilli logo">
+          <div class="logo-mark emblem-mark">
+            <img src="./assets/images/dr-anusri-emblem.png" alt="Dr. Anusri Adusumilli logo" class="brand-emblem-graphic" width="38" height="24">
+          </div>
+          <div class="logo-text">
+            <span class="brand-name">Dr. Anusri Adusumilli</span>
+            <span class="brand-tagline">General Physician • HITEC City</span>
+          </div>
         </a>
+      </div>
 
-        <!-- Mobile Menu Toggle Button -->
-        <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Toggle mobile menu" aria-expanded="false">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
+      <div class="header-col-right">
+        <a href="/contact/" class="btn-header-book" aria-label="Book an Appointment">
+          <span class="btn-text-desktop">Book an Appointment</span>
+          <span class="btn-text-mobile">Book Now</span>
+        </a>
       </div>
     </div>
   </header>
 
-  <!-- Mobile Drawer Navigation -->
-  <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
-    <div class="mobile-drawer-top">
-      <span class="mobile-drawer-brand">EDGE Clinic</span>
-      <button type="button" class="mobile-drawer-close" id="mobileCloseBtn" aria-label="Close navigation menu">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-      </button>
-    </div>
-    <nav class="mobile-drawer-nav">
-      <ul class="mobile-nav-links">
-        <li><a href="/" class="mobile-nav-link active">Home</a></li>
-        <li><a href="/about" class="mobile-nav-link">About Doctor</a></li>
-        <li><a href="/services" class="mobile-nav-link">Services</a></li>
-        <li><a href="/credentials" class="mobile-nav-link">Credentials</a></li>
-        <li><a href="/health-guides" class="mobile-nav-link">Health Guides</a></li>
-        <li><a href="/visit" class="mobile-nav-link">Visit &amp; Map</a></li>
-      </ul>
-    </nav>
-  </div>
-
   <main id="main-content">
     
-    <!-- ========================================== -->
-    <!-- 3. WIX-STYLE DOCTOR HERO SHOWCASE          -->
-    <!-- ========================================== -->
-    <section class="hero-section medera-hero-section" id="hero">
-      <div class="medera-canvas-container">
-        <div class="medera-hero-stage">
+    <!-- ========================================================================= -->
+    <!-- 3. FULL-BLEED DOCTOR HERO SHOWCASE                                        -->
+    <!-- ========================================================================= -->
+    <section class="hero-section medera-hero-section hero-fullbleed-section" id="hero">
+      <div class="hero-fullbleed-stage">
+        
+        <!-- Left Side: Clean Typography Block (No container, no card, no background box) -->
+        <div class="hero-text-block">
+          <div class="hero-title-group">
+            <h1 class="hero-doctor-name" id="heroDoctorName">Dr. Anusri Adusumilli</h1>
+            <p class="hero-doctor-title" id="heroDoctorTitle">Consultant General Physician</p>
+            <p class="hero-doctor-degree">MBBS, MD (General Medicine)</p>
+          </div>
           
-          <!-- Top Utility Badges Strip -->
-          <div class="medera-top-strip motion-hero-top">
-            <div class="medera-badges-left">
-              <a href="/credentials" class="medera-glass-badge" data-magnetic aria-label="View Qualifications and Clinical Credentials">
-                <span>CONSULTANT GENERAL PHYSICIAN</span>
-                <span class="medera-badge-arrow">↗</span>
-              </a>
-            </div>
-
-            <div class="medera-badges-right">
-              <div class="medera-glass-badge medera-clinic-badge">
-                <span class="medera-eye-icon">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-                </span>
-                <span>EDGE CLINIC • HITEC CITY</span>
-              </div>
-            </div>
+          <div class="hero-cta-wrap motion-hero-ctas">
+            <a href="/contact/" 
+               class="hero-glass-btn" 
+               id="heroConsultNowBtn"
+               aria-label="Consult Now">Consult Now</a>
           </div>
-
-          <!-- Delicate Scientific DNA Double-Helix & Molecular SVG Artwork -->
-          <svg class="medera-dna-backdrop" viewBox="0 0 1200 850" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <!-- DNA Double Helix climbing up the right side behind doctor's arm -->
-            <g class="dna-helix-group" stroke="rgba(255, 255, 255, 0.75)" stroke-width="1.4">
-  <path class="dna-strand dna-strand-1" d="M 1100.0,700.0 L 1101.7,690.7 L 1103.3,681.5 L 1104.4,672.8 L 1105.1,664.5 L 1104.9,657.1 L 1104.0,650.4 L 1102.1,644.7 L 1099.2,640.0 L 1095.3,636.3 L 1090.3,633.7 L 1084.4,632.0 L 1077.5,631.3 L 1069.8,631.4 L 1061.4,632.2 L 1052.6,633.4 L 1043.3,635.1 L 1034.0,636.8 L 1024.7,638.5 L 1015.6,640.0 L 1007.0,641.0 L 998.9,641.5 L 991.6,641.2 L 985.2,640.0 L 979.8,637.8 L 975.3,634.7 L 971.9,630.5 L 969.5,625.3 L 968.1,619.1 L 967.6,612.0 L 967.9,604.1 L 968.8,595.6 L 970.2,586.6 L 971.8,577.4 L 973.6,568.0 L 975.3,558.7 L 976.6,549.8 L 977.6,541.2 L 977.8,533.4 L 977.3,526.3 L 975.9,520.1 L 973.5,514.9 L 970.1,510.7 L 965.6,507.6 L 960.2,505.4 L 953.7,504.3 L 946.4,504.0 L 938.4,504.4 L 929.7,505.5 L 920.7,506.9 L 911.3,508.7 L 902.0,510.4 L 892.8,512.0 L 883.9,513.3 L 875.6,514.0 L 867.9,514.1 L 861.0,513.4 L 855.1,511.7 L 850.1,509.1 L 846.2,505.4 L 843.3,500.7 L 841.4,495.0 L 840.5,488.3 L 840.4,480.8 L 841.0,472.6 L 842.2,463.8 L 843.7,454.7 L 845.5,445.3 L 847.2,436.0 L 848.7,426.9 L 849.9,418.1 L 850.5,409.9 L 850.4,402.4 L 849.4,395.8 L 847.5,390.1 L 844.6,385.4 L 840.7,381.7 L 835.7,379.1 L 829.7,377.5 L 822.8,376.8 L 815.2,376.8 L 806.8,377.6 L 797.9,378.9 L 788.7,380.5 L 779.3,382.3 L 770.0,384.0 L 761.0,385.4 L 752.3,386.5 L 744.3,386.9 L 737.0,386.6 L 730.6,385.4 L 725.1,383.3 L 720.7,380.1 L 717.3,375.9 L 714.9,370.7 L 713.6,364.4 L 713.1,357.3 L 713.3,349.5 L 714.3,340.9 L 715.6,332.0 L 717.3,322.7" fill="none"/>
-  <path class="dna-strand dna-strand-2" d="M 1100.0,700.0 L 1090.7,701.7 L 1081.5,703.3 L 1072.8,704.4 L 1064.5,705.1 L 1057.1,704.9 L 1050.4,704.0 L 1044.7,702.1 L 1040.0,699.2 L 1036.3,695.3 L 1033.7,690.3 L 1032.0,684.4 L 1031.3,677.5 L 1031.4,669.8 L 1032.2,661.4 L 1033.4,652.6 L 1035.1,643.3 L 1036.8,634.0 L 1038.5,624.7 L 1040.0,615.6 L 1041.0,607.0 L 1041.5,598.9 L 1041.2,591.6 L 1040.0,585.2 L 1037.8,579.8 L 1034.7,575.3 L 1030.5,571.9 L 1025.3,569.5 L 1019.1,568.1 L 1012.0,567.6 L 1004.1,567.9 L 995.6,568.8 L 986.6,570.2 L 977.4,571.8 L 968.0,573.6 L 958.7,575.3 L 949.8,576.6 L 941.2,577.6 L 933.4,577.8 L 926.3,577.3 L 920.1,575.9 L 914.9,573.5 L 910.7,570.1 L 907.6,565.6 L 905.4,560.2 L 904.3,553.7 L 904.0,546.4 L 904.4,538.4 L 905.5,529.7 L 906.9,520.7 L 908.7,511.3 L 910.4,502.0 L 912.0,492.8 L 913.3,483.9 L 914.0,475.6 L 914.1,467.9 L 913.4,461.0 L 911.7,455.1 L 909.1,450.1 L 905.4,446.2 L 900.7,443.3 L 895.0,441.4 L 888.3,440.5 L 880.8,440.4 L 872.6,441.0 L 863.8,442.2 L 854.7,443.7 L 845.3,445.5 L 836.0,447.2 L 826.9,448.7 L 818.1,449.9 L 809.9,450.5 L 802.4,450.4 L 795.8,449.4 L 790.1,447.5 L 785.4,444.6 L 781.7,440.7 L 779.1,435.7 L 777.5,429.7 L 776.8,422.8 L 776.8,415.2 L 777.6,406.8 L 778.9,397.9 L 780.5,388.7 L 782.3,379.3 L 784.0,370.0 L 785.4,361.0 L 786.5,352.3 L 786.9,344.3 L 786.6,337.0 L 785.4,330.6 L 783.3,325.1 L 780.1,320.7 L 775.9,317.3 L 770.7,314.9 L 764.4,313.6 L 757.3,313.1 L 749.5,313.3 L 740.9,314.3 L 732.0,315.6 L 722.7,317.3" fill="none"/>
-  <line x1="1104.6" y1="671.7" x2="1071.7" y2="704.6" stroke-width="1.2"/>
-  <circle cx="1104.6" cy="671.7" r="4.5" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.4"/>
-  <circle cx="1071.7" cy="704.6" r="4.5" fill="rgba(255,255,255,0.7)"/>
-  <line x1="1093.6" y1="635.2" x2="1035.2" y2="693.6" stroke-width="1.2"/>
-  <circle cx="1093.6" cy="635.2" r="4.5" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.4"/>
-  <circle cx="1035.2" cy="693.6" r="4.5" fill="rgba(255,255,255,0.7)"/>
-  <line x1="1046.8" y1="634.4" x2="1034.4" y2="646.8" stroke-width="1.2"/>
-  <circle cx="1046.8" cy="634.4" r="4.5" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.4"/>
-  <circle cx="1034.4" cy="646.8" r="4.5" fill="rgba(255,255,255,0.7)"/>
-  <line x1="992.5" y1="641.2" x2="1041.2" y2="592.5" stroke-width="1.2"/>
-  <circle cx="992.5" cy="641.2" r="4.5" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.4"/>
-  <circle cx="1041.2" cy="592.5" r="4.5" fill="rgba(255,255,255,0.7)"/>
-  <line x1="968.0" y1="618.2" x2="1018.2" y2="568.0" stroke-width="1.2"/>
-  <circle cx="968.0" cy="618.2" r="4.5" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.4"/>
-  <circle cx="1018.2" cy="568.0" r="4.5" fill="rgba(255,255,255,0.7)"/>
-  <line x1="974.3" y1="564.5" x2="964.5" y2="574.3" stroke-width="1.2"/>
-  <circle cx="974.3" cy="564.5" r="4.5" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.4"/>
-  <circle cx="964.5" cy="574.3" r="4.5" fill="rgba(255,255,255,0.7)"/>
-  <line x1="974.5" y1="516.7" x2="916.7" y2="574.5" stroke-width="1.2"/>
-  <circle cx="974.5" cy="516.7" r="4.5" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.4"/>
-  <circle cx="916.7" cy="574.5" r="4.5" fill="rgba(255,255,255,0.7)"/>
-  <line x1="939.4" y1="504.3" x2="904.3" y2="539.4" stroke-width="1.2"/>
-  <circle cx="939.4" cy="504.3" r="4.5" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.4"/>
-  <circle cx="904.3" cy="539.4" r="4.5" fill="rgba(255,255,255,0.7)"/>
-  <line x1="882.8" y1="513.4" x2="913.4" y2="482.8" stroke-width="1.2"/>
-  <circle cx="882.8" cy="513.4" r="4.5" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.4"/>
-  <circle cx="913.4" cy="482.8" r="4.5" fill="rgba(255,255,255,0.7)"/>
-  <line x1="845.0" y1="503.8" x2="903.8" y2="445.0" stroke-width="1.2"/>
-  <circle cx="845.0" cy="503.8" r="4.5" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.4"/>
-  <circle cx="903.8" cy="445.0" r="4.5" fill="rgba(255,255,255,0.7)"/>
-  <line x1="843.1" y1="458.1" x2="858.1" y2="443.1" stroke-width="1.2"/>
-  <circle cx="843.1" cy="458.1" r="4.5" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.4"/>
-  <circle cx="858.1" cy="443.1" r="4.5" fill="rgba(255,255,255,0.7)"/>
-  <line x1="850.4" y1="403.3" x2="803.3" y2="450.4" stroke-width="1.2"/>
-  <circle cx="850.4" cy="403.3" r="4.5" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.4"/>
-  <circle cx="803.3" cy="450.4" r="4.5" fill="rgba(255,255,255,0.7)"/>
-  <line x1="828.9" y1="377.3" x2="777.3" y2="428.9" stroke-width="1.2"/>
-  <circle cx="828.9" cy="377.3" r="4.5" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.4"/>
-  <circle cx="777.3" cy="428.9" r="4.5" fill="rgba(255,255,255,0.7)"/>
-  <line x1="775.8" y1="382.9" x2="782.9" y2="375.8" stroke-width="1.2"/>
-  <circle cx="775.8" cy="382.9" r="4.5" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.4"/>
-  <circle cx="782.9" cy="375.8" r="4.5" fill="rgba(255,255,255,0.7)"/>
-  <line x1="727.1" y1="384.2" x2="784.2" y2="327.1" stroke-width="1.2"/>
-  <circle cx="727.1" cy="384.2" r="4.5" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.4"/>
-  <circle cx="784.2" cy="327.1" r="4.5" fill="rgba(255,255,255,0.7)"/>
-  <line x1="713.3" y1="350.5" x2="750.5" y2="313.3" stroke-width="1.2"/>
-  <circle cx="713.3" cy="350.5" r="4.5" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.4"/>
-  <circle cx="750.5" cy="313.3" r="4.5" fill="rgba(255,255,255,0.7)"/>
-</g>
-
-            <!-- Molecular nodes on lower left -->
-            <g class="molecular-cluster" stroke="rgba(255, 255, 255, 0.65)" stroke-width="1.4">
-              <line x1="160" y1="680" x2="220" y2="650"/>
-              <line x1="220" y1="650" x2="280" y2="680"/>
-              <line x1="280" y1="680" x2="340" y2="650"/>
-              <line x1="340" y1="650" x2="400" y2="680"/>
-              <circle cx="160" cy="680" r="5.5" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.5"/>
-              <circle cx="220" cy="650" r="5.5" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.5"/>
-              <circle cx="280" cy="680" r="5.5" fill="rgba(255,255,255,0.65)"/>
-              <circle cx="340" cy="650" r="5.5" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.5"/>
-              <circle cx="400" cy="680" r="5.5" fill="rgba(255,255,255,0.65)"/>
-            </g>
-          </svg>
-
-          <!-- Centered Cutout Doctor Figure (Dr. Anusri Adusumilli) -->
-          <div class="medera-doctor-anchor">
-            <img src="./assets/images/dr-anusri-medera-hero.png" 
-                 alt="Dr. Anusri Adusumilli - Consultant General Physician MBBS MD at Edge Clinic" 
-                 class="medera-doctor-cutout motion-reveal" 
-                 loading="eager">
-          </div>
-
-          <!-- Left Doctor Content Card -->
-          <div class="medera-left-editorial">
-            <div class="medera-doctor-card">
-              <div class="medera-card-brand-row">
-                <span class="medera-eyebrow-tag motion-hero-eyebrow">GENERAL PHYSICIAN · HITEC CITY, HYDERABAD</span>
-              </div>
-              <h1 class="medera-doctor-name">
-                <span class="hero-line"><span class="hero-line-inner">General Medicine Care</span></span>
-                <span class="hero-line"><span class="hero-line-inner">in HITEC City.</span></span>
-              </h1>
-              <p class="medera-doctor-desc motion-hero-desc">
-                <span class="desc-desktop">Consult Dr. Anusri Adusumilli for common illnesses, ongoing health concerns, chronic condition management and preventive care at EDGE Clinic.</span>
-                <span class="desc-mobile">Consult Dr. Anusri for common illnesses, diabetes, blood pressure and preventive healthcare at EDGE Clinic.</span>
-              </p>
-              
-              <!-- Clean Action CTA Row -->
-              <div class="medera-hero-cta-row motion-hero-ctas">
-                <a href="tel:+916303285050" class="btn btn-primary medera-hero-cta-btn hero-call-btn-desktop" id="heroCallScheduleBtn" data-magnetic>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                  <span>Call to Schedule</span>
-                </a>
-                <a href="#common-concerns" class="btn btn-secondary medera-hero-secondary-btn" data-magnetic>
-                  <span>Explore Services</span>
-                </a>
-              </div>
-
-              <!-- Consultation Schedule Pill -->
-              <div class="medera-schedule-meta motion-hero-schedule">
-                <span class="schedule-dot"></span>
-                <span>Monday–Saturday · 9 AM–4 PM · In-clinic consultations</span>
-              </div>
-            </div>
-          </div>
-
-
-
         </div>
+
+        <!-- Right Side: Doctor Image (60 to 65% width, anchored to bottom right, reaching bottom edge) -->
+        <div class="hero-image-wrap">
+          <picture>
+            <source srcset="./assets/images/dr-anusri-new-cutout.webp" type="image/webp">
+            <img src="./assets/images/dr-anusri-new-cutout.png" 
+                 alt="Dr. Anusri Adusumilli, Consultant General Physician at Edge Clinic, Hitech City, Hyderabad" 
+                 class="hero-doctor-portrait" 
+                 loading="eager" 
+                 fetchpriority="high">
+          </picture>
+        </div>
+
       </div>
     </section>
 
@@ -489,12 +345,197 @@
     </section>
 
     <!-- ========================================================================= -->
-    <!-- 3. COMMON HEALTH CONCERNS (6 Patient-Friendly Cards)                      -->
+    <!-- 3. AREAS OF EXPERTISE                                                     -->
+    <!-- ========================================================================= -->
+    <section class="expertise-section" id="expertise">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2 class="section-heading">Areas of Expertise</h2>
+        </div>
+
+        <div class="expertise-grid">
+          <!-- 1. Infectious Diseases -->
+          <div class="expertise-card">
+            <div class="expertise-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <h3 class="expertise-card-title">Infectious Diseases</h3>
+          </div>
+
+          <!-- 2. Diabetes -->
+          <div class="expertise-card">
+            <div class="expertise-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+            </div>
+            <h3 class="expertise-card-title">Diabetes</h3>
+          </div>
+
+          <!-- 3. Hypertension -->
+          <div class="expertise-card">
+            <div class="expertise-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h3 class="expertise-card-title">Hypertension</h3>
+          </div>
+
+          <!-- 4. Hypothyroidism -->
+          <div class="expertise-card">
+            <div class="expertise-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M8 8c1.5 2 6.5 2 8 0M8 16c1.5-2 6.5-2 8 0"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <h3 class="expertise-card-title">Hypothyroidism</h3>
+          </div>
+
+          <!-- 5. Health Screening and Vaccinations -->
+          <div class="expertise-card">
+            <div class="expertise-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m14 12-8.5 8.5a2.12 2.12 0 1 1-3-3L11 9"/><path d="M16 16l4-4"/><path d="m18 10 2-2a2.83 2.83 0 0 0-4-4l-2 2"/><path d="m11 9 4 4"/></svg>
+            </div>
+            <h3 class="expertise-card-title">Health Screening and Vaccinations</h3>
+          </div>
+
+          <!-- 6. Multi-morbidity -->
+          <div class="expertise-card">
+            <div class="expertise-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            </div>
+            <h3 class="expertise-card-title">Multi-morbidity</h3>
+          </div>
+
+          <!-- 7. Geriatric Care -->
+          <div class="expertise-card">
+            <div class="expertise-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M17 11l2 2 4-4"/></svg>
+            </div>
+            <h3 class="expertise-card-title">Geriatric Care</h3>
+          </div>
+
+          <!-- 8. Complex and Undiagnosed Conditions -->
+          <div class="expertise-card">
+            <div class="expertise-icon-wrap" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><path d="M11 8v6M8 11h6"/></svg>
+            </div>
+            <h3 class="expertise-card-title">Complex and Undiagnosed Conditions</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 4. ABOUT THE PHYSICIAN                                                    -->
+    <!-- ========================================================================= -->
+    <section class="about-section" id="about">
+      <div class="container about-grid">
+        
+        <!-- Large Doctor Image Column (About 45 to 50% width, head & shoulders clearly visible) -->
+        <div class="about-image-wrapper">
+          <div class="about-image-frame">
+            <picture>
+              <source srcset="./assets/images/dr-anusri-uploaded.webp" type="image/webp">
+              <img src="./assets/images/dr-anusri-uploaded.jpg" 
+                   alt="Dr. Anusri Adusumilli, Consultant General Physician at Edge Clinic, Hitech City, Hyderabad" 
+                   class="about-doctor-photo" 
+                   loading="lazy" 
+                   width="682" 
+                   height="1024">
+            </picture>
+          </div>
+        </div>
+
+        <!-- Doctor Content Column -->
+        <div class="about-content">
+          <h2 class="section-heading">Dr. Anusri Adusumilli, MBBS, MD</h2>
+          <p class="about-designation">Consultant General Physician</p>
+          <p class="about-registration">Medical Registration No. APMC/FMR/94201 (Telangana State Medical Council)</p>
+          
+          <div class="about-bio-text">
+            <p>
+              Dr. Anusri Adusumilli is a Consultant General Physician at Edge Clinic, Hitech City, with 6.5 years of experience in general medicine. She manages infectious diseases, diabetes, hypertension and thyroid disorders, and cares for older adults and patients with more than one health condition. She also provides health screening and adult vaccinations.
+            </p>
+            <p>
+              Her consultations are built on careful listening, a thorough clinical examination, and a clear explanation of the diagnosis, the nature of the illness and its outlook, so that patients can make informed decisions about their treatment. She has neurology training from Apollo Hospital and JIPMER.
+            </p>
+            <p>
+              Languages: Telugu, English, Hindi and Kannada.
+            </p>
+          </div>
+
+          <div class="about-actions">
+            <a href="/about" class="btn btn-primary">View Full Profile</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 5. CLINICAL CREDENTIALS PREVIEW (2 Concise Highlights)                   -->
+    <!-- ========================================================================= -->
+    <section class="credentials-preview-section" id="credentials-preview">
+      <span id="credentials"></span>
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <h2 class="section-heading">Clinical Credentials Preview</h2>
+          <p class="section-subheading">Rigorous medical training and peer-reviewed honors supporting evidence-based patient care.</p>
+        </div>
+
+        <div class="credentials-preview-grid">
+          <!-- Credential Highlight 1: Cleveland Clinic Training -->
+          <div class="credential-preview-card">
+            <div class="cred-crest-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div class="cred-preview-body">
+              <span class="cred-preview-tag">Advanced Clinical Training · USA</span>
+              <h3 class="cred-preview-title">Cleveland Clinic Epilepsy &amp; Neurophysiology Course</h3>
+              <div class="cred-preview-inst">The Epilepsy Center, Neurological Institute · Cleveland, Ohio</div>
+              <p class="cred-preview-desc">Post-doctoral training in clinical neurophysiology, diagnostic EEG interpretation, and adult seizure semiology (Sep–Dec 2024).</p>
+            </div>
+          </div>
+
+          <!-- Credential Highlight 2: Apollo & JIPMER Experience -->
+          <div class="credential-preview-card">
+            <div class="cred-crest-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 10h18M5 10v11M19 10v11M9 10v11M14 10v11M12 2L2 7h20L12 2z"/></svg>
+            </div>
+            <div class="cred-preview-body">
+              <span class="cred-preview-tag">Clinical Residency &amp; Registrar Tenure</span>
+              <h3 class="cred-preview-title">Apollo Hospitals &amp; JIPMER Clinical Experience</h3>
+              <div class="cred-preview-inst">Apollo Jubilee Hills, AIMSR &amp; JIPMER Puducherry</div>
+              <p class="cred-preview-desc">Internal medicine residency and neurology registrar appointments managing acute inpatient admissions and outpatient adult care.</p>
+            </div>
+          </div>
+
+          <!-- Credential Highlight 3: TNSCON Research Recognition -->
+          <div class="credential-preview-card desktop-only-element">
+            <div class="cred-crest-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+            </div>
+            <div class="cred-preview-body">
+              <span class="cred-preview-tag">Research Presentation Award</span>
+              <h3 class="cred-preview-title">TNSCON 2023 Research Recognition</h3>
+              <div class="cred-preview-inst">Telangana Neurosciences Society Annual Conference</div>
+              <p class="cred-preview-desc">Second Prize recipient for competitive clinical research poster presentation evaluated by senior neuroscience faculty (March 2023).</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="credentials-preview-bottom">
+          <a href="/credentials" class="btn btn-secondary">
+            <span>View All Qualifications, History &amp; Certificates →</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 6. COMMON HEALTH CONCERNS                                                 -->
     <!-- ========================================================================= -->
     <section class="common-concerns-section" id="common-concerns">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-tag">Primary Care Services</span>
           <h2 class="section-heading">Common Health Concerns</h2>
           <p class="section-subheading">Personalized diagnosis and clinical management for everyday illnesses and long-term medical conditions.</p>
         </div>
@@ -581,282 +622,74 @@
 
         <div class="text-center" style="margin-top: 2.75rem;">
           <a href="/services" class="btn btn-secondary">
-            <span>Explore Complete Clinical Services &amp; Conditions Library →</span>
+            <span>Read More Concerns</span>
           </a>
         </div>
       </div>
     </section>
 
     <!-- ========================================================================= -->
-    <!-- 4. CONSULTATION OPTIONS (In-Clinic & Online)                              -->
+    <!-- 7. CONSULTATION OPTIONS (Walk-In and Online)                              -->
     <!-- ========================================================================= -->
     <section class="consultation-options-section" id="services">
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-tag">Clinical Consultations</span>
           <h2 class="section-heading">Consultation Options</h2>
-          <p class="section-subheading">Comprehensive in-person medical evaluations and personalized care at EDGE Clinic, HITEC City.</p>
         </div>
 
-        <div class="consultation-options-grid consultation-single-card-grid">
-          <!-- Option 1: In-Clinic -->
-          <div class="option-card" data-motion-pair="left">
-            <span class="option-type-tag">In-Person Consultation</span>
-            <h3 class="option-title">In-Clinic Consultation</h3>
-            <div class="option-fee-row">
-              <span class="option-fee">In-Person Visit</span>
-              <span class="option-fee-meta">• Mon–Sat, 9:00 AM – 4:00 PM</span>
-            </div>
-            <p class="option-summary-text">
-              Comprehensive in-person medical evaluation, physical examination, diagnosis and personalized treatment at EDGE Clinic, HITEC City. Walk-ins and scheduled appointments welcome.
-            </p>
-            <ul class="option-features-list option-features-desktop">
+        <div class="consultation-options-grid">
+          <!-- Card 1: Walk-In Consultation -->
+          <div class="option-card">
+            <h3 class="option-title">Walk-In Consultation</h3>
+            <ul class="option-features-list">
               <li>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span><strong>Detailed Clinical Examination:</strong> Comprehensive physical evaluation &amp; vital signs assessment</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Edge Clinic, The Medical Centre, near Raidurg Metro Station, Phase 2, HITEC City, Hyderabad, Telangana 500081</span>
               </li>
               <li>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span><strong>Timing:</strong> Mon–Sat, 9:00 AM – 4:00 PM at EDGE Clinic, HITEC City</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>Monday to Saturday</span>
               </li>
               <li>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span><strong>Access:</strong> Both walk-in patients and advance scheduled visits welcome</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>9 AM to 4 PM</span>
               </li>
               <li>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>
-                <span><strong>Facility:</strong> Outpatient consultation suite at The Medical Centre with diagnostic evaluation access</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>Walk-ins welcome</span>
               </li>
             </ul>
             <div class="option-actions">
-              <a href="tel:+916303285050" class="btn btn-primary btn-block" data-magnetic>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                <span>Call to Schedule</span>
-              </a>
+              <a href="https://wa.me/916303285050?text=Hello%20EDGE%20Clinic,%20I%20would%20like%20to%20arrange%20a%20consultation%20with%20Dr.%20Anusri%20Adusumilli" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="btn btn-primary btn-block" 
+                 data-magnetic>Consult Now</a>
             </div>
           </div>
 
-          <!-- FLAG FOR CLINIC CONFIRMATION: Online consultations are not confirmed in the doctor's original information form. Public promotional card hidden until verified. -->
-          <div class="option-card option-card-teleconsult unverified-service-hidden" style="display: none;" aria-hidden="true" data-motion-pair="right">
-            <span class="option-type-tag">Remote Consultation</span>
-            <h3 class="option-title">Online / Follow-up Consult</h3>
-            <div class="option-fee-row">
-              <span class="option-fee">Teleconsultation</span>
-              <span class="option-fee-meta">• Subject to Confirmation</span>
-            </div>
-          </div>
-        </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================== -->
-    <!-- 5. ABOUT DR. ANUSRI ADUSUMILLI             -->
-    <!-- ========================================== -->
-    <section class="about-section" id="about">
-      <div class="container about-grid">
-        
-        <div class="about-image-wrapper">
-          <div class="about-image-frame">
-            <img src="./assets/images/dr-anusri-headshot-square.jpg" alt="Dr. Anusri Adusumilli - Consultant General Physician MBBS MD" class="about-doctor-photo" loading="lazy">
-            <div class="experience-badge">
-              <span class="badge-num">6.5+</span>
-              <span class="badge-label">Years Experience</span>
+          <!-- Card 2: Online Consultation -->
+          <div class="option-card">
+            <h3 class="option-title">Online Consultation</h3>
+            <ul class="option-features-list">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>Monday to Saturday</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                <span>9 AM to 4 PM</span>
+              </li>
+            </ul>
+            <div class="option-actions">
+              <a href="https://wa.me/916303285050?text=Hello%20EDGE%20Clinic,%20I%20would%20like%20to%20arrange%20a%20consultation%20with%20Dr.%20Anusri%20Adusumilli" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="btn btn-primary btn-block" 
+                 data-magnetic>Consult Now</a>
             </div>
           </div>
         </div>
-
-        <div class="about-content">
-          <span class="section-tag">About The Physician</span>
-          <h2 class="section-heading">Dr. Anusri Adusumilli <span class="serif-accent">MBBS, MD</span></h2>
-          <div class="about-meta-pills">
-            <span class="meta-pill">TSMC Reg: APMC/FMR/94201</span>
-            <span class="meta-pill">Edge Clinic • HITEC City</span>
-          </div>
-          
-          <p class="about-lead">
-            Consultant Physician specializing in adult &amp; geriatric medicine, acute infectious diseases, metabolic disorders, and complex medical diagnostics at EDGE Clinic.
-          </p>
-
-          <div class="quote-callout minimal-quote desktop-only-element">
-            <p>“Rooted in attentive listening, meticulous clinical examination, and clear diagnoses that empower patients.”</p>
-            <cite>— Dr. Anusri Adusumilli | Consultant General Physician</cite>
-          </div>
-
-          <!-- Doctor Key Highlights Ribbon -->
-          <div class="about-highlights-ribbon">
-            <div class="highlight-chip">
-              <span class="chip-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 3v5a4.5 4.5 0 0 0 9 0V3M18 15v3a3 3 0 0 1-6 0v-6M18 11a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
-              </span>
-              <div>
-                <strong>MBBS, MD</strong>
-                <span>General Medicine</span>
-              </div>
-            </div>
-            <div class="highlight-chip">
-              <span class="chip-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 10h18M5 10v11M19 10v11M9 10v11M14 10v11M12 2L2 7h20L12 2z"/></svg>
-              </span>
-              <div>
-                <strong>Cleveland Clinic &amp; Apollo</strong>
-                <span>Neurology &amp; Internal Medicine</span>
-              </div>
-            </div>
-            <div class="highlight-chip desktop-only-element">
-              <span class="chip-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-              </span>
-              <div>
-                <strong>4 Languages Spoken</strong>
-                <span>Telugu, English, Hindi, Kannada</span>
-              </div>
-            </div>
-            <div class="highlight-chip desktop-only-element">
-              <span class="chip-icon">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </span>
-              <div>
-                <strong>Mon – Sat 9AM – 4PM</strong>
-                <span>Walk-ins &amp; Clinic Visits</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="about-actions">
-            <a href="/about" class="btn btn-primary">View Full Profile</a>
-            <a href="/credentials" class="btn btn-secondary desktop-only-element">View Clinical Credentials</a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ========================================================================= -->
-    <!-- 6. HOW TO ARRANGE A VISIT (3 Simple Steps)                                -->
-    <!-- ========================================================================= -->
-    <section class="how-to-visit-section" id="how-to-visit">
-      <div class="container">
-        
-        <div class="section-header text-center">
-          <span class="section-tag">Reception-Coordinated Visits</span>
-          <h2 class="section-heading">Arrange Your Consultation</h2>
-          <p class="section-subheading">Consultations with Dr. Anusri Adusumilli are coordinated by the EDGE Clinic reception team. Call or WhatsApp reception to enquire about availability and arrange your visit.</p>
-        </div>
-
-        <div class="steps-container">
-          <div class="steps-progress-track" aria-hidden="true">
-            <div class="steps-progress-fill" id="stepsProgressBar"></div>
-          </div>
-          <!-- Step 1 -->
-          <div class="step-card" data-step="1">
-            <div class="step-number-badge">1</div>
-            <div class="step-card-content">
-              <h3 class="step-title">Contact EDGE Clinic</h3>
-              <p class="step-desc">Call or WhatsApp the reception team.</p>
-            </div>
-          </div>
-
-          <!-- Step 2 -->
-          <div class="step-card" data-step="2">
-            <div class="step-number-badge">2</div>
-            <div class="step-card-content">
-              <h3 class="step-title">Confirm Your Visit</h3>
-              <p class="step-desc">Reception provides appointment availability and confirms the consultation details.</p>
-            </div>
-          </div>
-
-          <!-- Step 3 -->
-          <div class="step-card" data-step="3">
-            <div class="step-number-badge">3</div>
-            <div class="step-card-content">
-              <h3 class="step-title">Visit Dr. Anusri</h3>
-              <p class="step-desc">Visit EDGE Clinic, HITEC City, at the confirmed time.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Reception Direct Action Strip -->
-        <div class="steps-reception-cta desktop-only-element">
-          <div class="steps-cta-info">
-            <strong>Ready to arrange your consultation?</strong>
-            <p>Our front desk team is available Mon–Sat from 9:00 AM to 4:00 PM to assist you.</p>
-          </div>
-          <div class="steps-cta-actions">
-            <a href="tel:+916303285050" class="btn btn-primary" data-magnetic>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              <span>Call to Schedule</span>
-            </a>
-            <a href="https://wa.me/916303285050?text=Hello%20EDGE%20Clinic,%20I%20would%20like%20to%20arrange%20a%20consultation%20with%20Dr.%20Anusri%20Adusumilli" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-magnetic>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/></svg>
-              <span>WhatsApp Reception</span>
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ========================================================================= -->
-    <!-- 7. CLINICAL CREDENTIALS PREVIEW (2 Concise Highlights)                   -->
-    <!-- ========================================================================= -->
-    <section class="credentials-preview-section" id="credentials-preview">
-      <span id="credentials"></span>
-      <div class="container">
-        
-        <div class="section-header text-center">
-          <span class="section-tag">Clinical Heritage</span>
-          <h2 class="section-heading">Clinical Credentials Preview</h2>
-          <p class="section-subheading">Rigorous medical training and peer-reviewed honors supporting evidence-based patient care.</p>
-        </div>
-
-        <div class="credentials-preview-grid">
-          <!-- Credential Highlight 1: Cleveland Clinic Training -->
-          <div class="credential-preview-card">
-            <div class="cred-crest-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-            </div>
-            <div class="cred-preview-body">
-              <span class="cred-preview-tag">Advanced Clinical Training · USA</span>
-              <h3 class="cred-preview-title">Cleveland Clinic Epilepsy &amp; Neurophysiology Course</h3>
-              <div class="cred-preview-inst">The Epilepsy Center, Neurological Institute · Cleveland, Ohio</div>
-              <p class="cred-preview-desc">Post-doctoral training in clinical neurophysiology, diagnostic EEG interpretation, and adult seizure semiology (Sep–Dec 2024).</p>
-            </div>
-          </div>
-
-          <!-- Credential Highlight 2: Apollo & JIPMER Experience -->
-          <div class="credential-preview-card">
-            <div class="cred-crest-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 10h18M5 10v11M19 10v11M9 10v11M14 10v11M12 2L2 7h20L12 2z"/></svg>
-            </div>
-            <div class="cred-preview-body">
-              <span class="cred-preview-tag">Clinical Residency &amp; Registrar Tenure</span>
-              <h3 class="cred-preview-title">Apollo Hospitals &amp; JIPMER Clinical Experience</h3>
-              <div class="cred-preview-inst">Apollo Jubilee Hills, AIMSR &amp; JIPMER Puducherry</div>
-              <p class="cred-preview-desc">Internal medicine residency and neurology registrar appointments managing acute inpatient admissions and outpatient adult care.</p>
-            </div>
-          </div>
-
-          <!-- Credential Highlight 3: TNSCON Research Recognition -->
-          <div class="credential-preview-card desktop-only-element">
-            <div class="cred-crest-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
-            </div>
-            <div class="cred-preview-body">
-              <span class="cred-preview-tag">Research Presentation Award</span>
-              <h3 class="cred-preview-title">TNSCON 2023 Research Recognition</h3>
-              <div class="cred-preview-inst">Telangana Neurosciences Society Annual Conference</div>
-              <p class="cred-preview-desc">Second Prize recipient for competitive clinical research poster presentation evaluated by senior neuroscience faculty (March 2023).</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="credentials-preview-bottom">
-          <a href="/credentials" class="btn btn-secondary">
-            <span>View All Qualifications, History &amp; Certificates →</span>
-          </a>
-        </div>
-
       </div>
     </section>
 
@@ -868,7 +701,6 @@
       <div class="container">
         
         <div class="section-header text-center">
-          <span class="section-tag">Clinical Guides &amp; Insights</span>
           <h2 class="section-heading">Featured Health Guides</h2>
           <p class="section-subheading">Doctor-authored, evidence-based guidance on chronic disease control, adult immunization, and comprehensive fatigue workups.</p>
         </div>
@@ -930,7 +762,6 @@
       <div class="container">
         
         <div class="section-header text-center">
-          <span class="section-tag">Patient Knowledge Base</span>
           <h2 class="section-heading">Frequently Asked Questions</h2>
           <p class="section-subheading">Practical guidance on consultation appointments, walk-ins, fees, and visiting EDGE Clinic.</p>
         </div>
@@ -954,218 +785,14 @@
       </div>
     </section>
 
-    <!-- ========================================== -->
-    <!-- 9. GOOGLE MAP & EDGE CLINIC LOCATION       -->
-    <!-- ========================================== -->
-    <section class="location-section" id="location">
-      <div class="container">
-
-        <div class="section-header text-center location-header-main">
-          <span class="section-tag">Find Us in HITEC City</span>
-          <h2 class="section-heading">EDGE Clinic Location &amp; Google Map</h2>
-          <p class="section-subheading">Conveniently located at The Medical Centre, 250m from Raidurg Metro Station with direct elevator access and valet parking.</p>
-        </div>
-        
-        <div class="location-card">
-          
-          <!-- LEFT COLUMN: CLEAR EDGE CLINIC ADDRESS & DIRECT CONTACT -->
-          <div class="location-info-col">
-            
-            <div class="location-badge-row">
-              <span class="location-badge location-badge-primary">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-                Outpatient Medical Facility
-              </span>
-              <span class="location-badge location-badge-transit">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 17h10"/><circle cx="8.5" cy="8.5" r="1.5"/><circle cx="15.5" cy="8.5" r="1.5"/></svg>
-                250m from Raidurg Metro
-              </span>
-            </div>
-
-            <h3 class="location-clinic-headline">EDGE Clinic — The Medical Centre</h3>
-            <p class="location-doctor-lead">Outpatient Consultation Suites • 4th Floor, Plot 27</p>
-            
-            <!-- Clear Address Highlight Box -->
-            <div class="edge-address-card">
-              <div class="edge-address-header">
-                <div class="edge-address-pin-icon">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                </div>
-                <div>
-                  <strong class="edge-address-title">Official Clinic Address</strong>
-                  <span class="edge-address-subtitle">HITEC City IT Corridor, Hyderabad</span>
-                </div>
-              </div>
-
-              <div class="edge-address-content">
-                <div class="address-building">
-                  <span class="addr-icon">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 9h6M9 13h6M12 9v8"/></svg>
-                  </span>
-                  <div>
-                    <strong class="addr-bold">The Medical Centre</strong> (4th Floor, Plot No. 27, Phase 2)
-                  </div>
-                </div>
-                <div class="address-street">
-                  <span class="addr-icon">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                  </span>
-                  <div>Huda Techno Park, Survey No. 64, near Raidurg Metro Station</div>
-                </div>
-                <div class="address-city">
-                  <span class="addr-icon">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-                  </span>
-                  <div><strong>HITEC City, Hyderabad, Telangana — 500081</strong>, India</div>
-                </div>
-              </div>
-
-              <div class="edge-address-actions">
-                <button type="button" class="btn-copy-address" id="copyAddressBtn">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                  <span>Copy Full Address</span>
-                </button>
-                <a href="https://www.google.com/maps?cid=10937127088013283902" target="_blank" rel="noopener noreferrer" class="btn-quick-map-link">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
-                  <span>Open in Google Maps App ↗</span>
-                </a>
-              </div>
-            </div>
-
-            <!-- Operating & Consultation Hours Block -->
-            <div class="location-timings-card">
-              <div class="timings-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-              </div>
-              <div class="timings-info">
-                <strong class="timings-title">Consultation &amp; Facility Timings</strong>
-                <div class="timings-row">
-                  <span class="timings-label">Dr. Anusri Outpatient:</span>
-                  <span class="timings-val">Mon – Sat: <strong>9:00 AM – 4:00 PM</strong> (Walk-ins &amp; Appointments)</span>
-                </div>
-                <div class="timings-row">
-                  <span class="timings-label">EDGE Clinic Facility:</span>
-                  <span class="timings-val">Mon – Sun (All 7 Days): <strong>9:00 AM – 9:30 PM</strong></span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Transit & Accessibility Info -->
-            <div class="location-transit-grid">
-              <div class="transit-item">
-                <span class="transit-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="16" rx="2"/><path d="M4 11h16M12 3v8M8 19l-2 3M16 19l2 3"/><circle cx="8" cy="15" r="1"/><circle cx="16" cy="15" r="1"/></svg>
-                </span>
-                <div>
-                  <strong>Metro Connectivity:</strong>
-                  <p>250m from <strong>Raidurg Metro Station</strong> (Blue Line Terminal Gate).</p>
-                </div>
-              </div>
-              <div class="transit-item">
-                <span class="transit-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg>
-                </span>
-                <div>
-                  <strong>Visitor &amp; Valet Parking:</strong>
-                  <p>Dedicated basement parking &amp; valet service available at The Medical Centre.</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Direct CTAs -->
-            <div class="location-actions">
-              <a href="https://www.google.com/maps/dir/?api=1&destination=17.4474,78.3762" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="googleMapsBtn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
-                Get Directions on Google Maps
-              </a>
-              <a href="tel:+916303285050" class="btn btn-secondary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                Call Reception
-              </a>
-            </div>
-
-          </div>
-
-          <!-- RIGHT COLUMN: INTERACTIVE GOOGLE MAP & CLINIC VISUAL -->
-          <div class="location-map-col">
-            
-            <div class="location-map-wrapper">
-              <div class="map-floating-pill">
-                <span class="live-dot"></span>
-                <strong>EDGE Clinic</strong> • The Medical Centre, HITEC City
-              </div>
-              
-              <iframe 
-                src="https://maps.google.com/maps?q=17.4474,78.3762+(EDGE+Clinic+-+The+Medical+Centre)&amp;hl=en&amp;z=17&amp;output=embed"
-                class="google-map-iframe"
-                id="googleMapIframe"
-                title="Google Map of EDGE Clinic at The Medical Centre, HITEC City, Hyderabad"
-                loading="lazy"
-                allowfullscreen
-                referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
-
-              <div class="map-interactive-overlay" id="mapOverlay">
-                <button type="button" class="btn-enable-map" id="enableMapBtn" aria-label="Click to interact with map">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-                  <span>Click to Interact with Map</span>
-                </button>
-              </div>
-
-              <div class="map-action-bar">
-                <div class="map-action-left">
-                  <span class="map-coordinates-meta">17.4474° N, 78.3762° E • HITEC City</span>
-                </div>
-                <div class="map-action-buttons">
-                  <a href="https://maps.google.com/?q=17.4474,78.3762+(EDGE+Clinic+-+The+Medical+Centre)" target="_blank" rel="noopener noreferrer" class="btn-directions-primary" aria-label="Get directions to EDGE Clinic">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-                    <span>Get Directions</span>
-                  </a>
-                  <a href="https://maps.google.com/?q=17.4474,78.3762+(EDGE+Clinic+-+The+Medical+Centre)" target="_blank" rel="noopener noreferrer" class="btn-expand-gmap">
-                    Full Map ↗
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Clinic Interior Preview Bar -->
-            <div class="clinic-interior-banner">
-              <img src="./assets/images/clinic-interior.jpg" alt="Edge Clinic The Medical Centre Consultation Suite" class="clinic-interior-thumb" loading="lazy">
-              <div class="clinic-interior-meta">
-                <strong class="interior-headline">Premium Consultation Suite</strong>
-                <p class="interior-sub">Private, sanitized, fully equipped OPD consultation room at The Medical Centre.</p>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
   </main>
 
-
-
-
-
-
-
   <!-- ========================================== -->
   <!-- 12. STICKY MOBILE QUICK-BOOK DOCK          -->
   <!-- ========================================== -->
-  <!-- ========================================== -->
-  <!-- 12. STICKY MOBILE QUICK-BOOK DOCK          -->
-  <!-- ========================================== -->
-  <div class="mobile-sticky-dock" id="mobileStickyDock" aria-label="Quick Contact Actions">
-    <a href="tel:+916303285050" class="dock-btn dock-call-btn" aria-label="Call Clinic Reception">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-      <span>Call Reception</span>
-    </a>
-    <a href="https://wa.me/916303285050?text=Hello%20EDGE%20Clinic,%20I%20would%20like%20to%20arrange%20a%20consultation%20with%20Dr.%20Anusri%20Adusumilli" target="_blank" rel="noopener noreferrer" class="dock-btn dock-whatsapp-btn" aria-label="Message Clinic Reception on WhatsApp">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/></svg>
-      <span>WhatsApp Reception</span>
+  <div class="mobile-sticky-dock" id="mobileStickyDock" aria-label="Quick Action">
+    <a href="/contact/" class="dock-btn dock-consult-btn" aria-label="Consult Now">
+      <span>Consult Now</span>
     </a>
   </div>
 
@@ -1198,7 +825,7 @@
       </div>
 
       <!-- Column 2: Quick Links -->
-      <div class="footer-col links-col desktop-only-element">
+      <div class="footer-col links-col">
         <h4 class="footer-heading">Pages &amp; Navigation</h4>
         <ul class="footer-links">
           <li><a href="/">Home</a></li>
@@ -1206,7 +833,7 @@
           <li><a href="/services">Clinical Services</a></li>
           <li><a href="/credentials">Academic &amp; Clinical Credentials</a></li>
           <li><a href="/health-guides">Featured Health Guides</a></li>
-          <li><a href="/visit">Visit &amp; Google Map</a></li>
+          <li><a href="/contact/">Contact</a></li>
         </ul>
       </div>
 
@@ -1251,8 +878,6 @@
       </div>
       <div class="footer-legal-links">
         <span>Adult &amp; Geriatric Care</span>
-        <span>•</span>
-        <span>Confidential Healthcare</span>
         <span>•</span>
         <span>Hyderabad</span>
       </div>

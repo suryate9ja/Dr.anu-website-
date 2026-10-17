@@ -45,8 +45,8 @@ const CLINIC_CONFIG = {
         division: "Neurological Institute & Center for International Medical Education",
         location: "Cleveland, Ohio, USA",
         dates: "September 23 – December 13, 2024",
-        directors: "Jessica Fesler, MD, MEd (MEHP) & Steven Kawczak, PhD",
-        certificateImage: "./assets/images/certificates/cleveland-clinic-epilepsy-certificate.jpg",
+        directors: "Jessica Fecker, MD, MEd (MEHP) & Steven Kawczak, PhD",
+        certificateImage: "./assets/images/certificates/cleveland-clinic-epilepsy-certificate.png",
         badge: "International Certification • USA",
         icon: "neuro",
         skills: ["Clinical Neurophysiology", "EEG Interpretation", "Seizure Diagnostics", "Complex Neurological Evaluation"]

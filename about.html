@@ -23,66 +23,33 @@
   <!-- HEADER -->
   <header class="site-header" id="header">
     <div class="container nav-container">
-      <a href="/" class="brand-logo" aria-label="Dr. Anusri Adusumilli - Home">
-        <div class="logo-mark emblem-mark">
-          <img src="./assets/images/dr-anusri-emblem.png" alt="Dr. Anusri Emblem" class="brand-emblem-graphic" width="38" height="24">
-        </div>
-        <div class="logo-text">
-          <span class="brand-name">Dr. Anusri Adusumilli</span>
-          <span class="brand-tagline">General Physician • HITEC City</span>
-        </div>
-      </a>
+      <div class="header-col-left" aria-hidden="true"></div>
 
-      <nav class="main-nav" aria-label="Main Navigation">
-        <ul class="nav-links">
-          <li><a href="/" class="nav-link">Home</a></li>
-          <li><a href="/about" class="nav-link active">About</a></li>
-          <li><a href="/services" class="nav-link">Services</a></li>
-          <li><a href="/credentials" class="nav-link">Credentials</a></li>
-          <li><a href="/health-guides" class="nav-link">Health Guides</a></li>
-          <li><a href="/visit" class="nav-link">Visit &amp; Map</a></li>
-        </ul>
-      </nav>
-
-      <div class="header-actions">
-        <a href="tel:+916303285050" class="btn btn-primary btn-header-book" id="navBookBtn" aria-label="Call Clinic">
-          <svg class="header-call-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-          <span class="header-btn-text-desktop">Call to Schedule</span>
-          <span class="header-btn-text-mobile">Call</span>
+      <div class="header-col-center">
+        <a href="/" class="brand-logo" aria-label="Dr. Anusri Adusumilli logo">
+          <div class="logo-mark emblem-mark">
+            <img src="./assets/images/dr-anusri-emblem.png" alt="Dr. Anusri Adusumilli logo" class="brand-emblem-graphic" width="38" height="24">
+          </div>
+          <div class="logo-text">
+            <span class="brand-name">Dr. Anusri Adusumilli</span>
+            <span class="brand-tagline">General Physician • HITEC City</span>
+          </div>
         </a>
-        <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu" aria-expanded="false">
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
+      </div>
+
+      <div class="header-col-right">
+        <a href="/contact/" class="btn-header-book" aria-label="Book an Appointment">
+          <span class="btn-text-desktop">Book an Appointment</span>
+          <span class="btn-text-mobile">Book Now</span>
+        </a>
       </div>
     </div>
   </header>
-
-  <!-- Mobile Drawer Navigation -->
-  <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
-    <div class="mobile-drawer-top">
-      <span class="mobile-drawer-brand">EDGE Clinic</span>
-      <button type="button" class="mobile-drawer-close" id="mobileCloseBtn" aria-label="Close navigation menu">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-      </button>
-    </div>
-    <nav class="mobile-drawer-nav">
-      <ul class="mobile-nav-links">
-        <li><a href="/" class="mobile-nav-link">Home</a></li>
-        <li><a href="/about" class="mobile-nav-link active">About Doctor</a></li>
-        <li><a href="/services" class="mobile-nav-link">Services</a></li>
-        <li><a href="/credentials" class="mobile-nav-link">Credentials</a></li>
-        <li><a href="/health-guides" class="mobile-nav-link">Health Guides</a></li>
-        <li><a href="/visit" class="mobile-nav-link">Visit &amp; Map</a></li>
-      </ul>
-    </nav>
-  </div>
 
   <main id="main-content">
     <!-- PAGE HERO -->
     <section class="page-header-section">
       <div class="container">
-        <span class="section-tag">Physician Profile</span>
         <h1 class="page-title">Dr. Anusri Adusumilli</h1>
         <p class="page-subtitle">MBBS, MD (General Medicine) • Consultant General Physician at EDGE Clinic, HITEC City, Hyderabad.</p>
       </div>
@@ -171,7 +138,7 @@
         </div>
       </div>
 
-      <div class="footer-col links-col desktop-only-element">
+      <div class="footer-col links-col">
         <h4 class="footer-heading">Quick Links</h4>
         <ul class="footer-links">
           <li><a href="/">Home</a></li>
@@ -179,7 +146,7 @@
           <li><a href="/services">Consultation Services</a></li>
           <li><a href="/credentials">Clinical Credentials</a></li>
           <li><a href="/health-guides">Health Guides</a></li>
-          <li><a href="/visit">Clinic Location &amp; Map</a></li>
+          <li><a href="/contact/">Contact</a></li>
         </ul>
       </div>
 
@@ -200,14 +167,9 @@
   </footer>
 
   <!-- Fixed Mobile Contact Bar (Single persistent mobile contact interface) -->
-  <div class="mobile-sticky-dock" id="mobileStickyDock" aria-label="Quick Contact Actions">
-    <a href="tel:+916303285050" class="dock-btn dock-call-btn" aria-label="Call Clinic Reception">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-      <span>Call Reception</span>
-    </a>
-    <a href="https://wa.me/916303285050?text=Hello%20EDGE%20Clinic,%20I%20would%20like%20to%20arrange%20a%20consultation%20with%20Dr.%20Anusri%20Adusumilli" target="_blank" rel="noopener noreferrer" class="dock-btn dock-whatsapp-btn" aria-label="Message Clinic Reception on WhatsApp">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/></svg>
-      <span>WhatsApp Reception</span>
+  <div class="mobile-sticky-dock" id="mobileStickyDock" aria-label="Quick Action">
+    <a href="/contact/" class="dock-btn dock-consult-btn" aria-label="Consult Now">
+      <span>Consult Now</span>
     </a>
   </div>
 

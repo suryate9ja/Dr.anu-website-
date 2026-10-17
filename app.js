@@ -842,6 +842,44 @@
   }
 
   function setupHeroInteractions() {
+    // 1. Dynamic Width Alignment for "Consultant General Physician" matching H1 width
+    function alignHeroDoctorTitle() {
+      const nameEl = document.getElementById('heroDoctorName');
+      const titleEl = document.getElementById('heroDoctorTitle');
+      if (!nameEl || !titleEl) return;
+
+      if (window.innerWidth <= 992) {
+        titleEl.style.letterSpacing = '';
+        titleEl.style.width = '100%';
+        return;
+      }
+
+      // Reset to measure natural unconstrained text width
+      titleEl.style.letterSpacing = 'normal';
+      titleEl.style.display = 'inline-block';
+      titleEl.style.width = 'auto';
+
+      const nameRect = nameEl.getBoundingClientRect();
+      const nameWidth = nameRect.width;
+      const titleRect = titleEl.getBoundingClientRect();
+      const titleWidth = titleRect.width;
+      const text = titleEl.textContent.trim();
+      const numGaps = text.length - 1;
+
+      if (nameWidth > titleWidth && numGaps > 0) {
+        const extraSpace = nameWidth - titleWidth;
+        const spacing = extraSpace / numGaps;
+        titleEl.style.letterSpacing = spacing.toFixed(2) + 'px';
+        titleEl.style.width = nameWidth.toFixed(2) + 'px';
+      }
+    }
+
+    alignHeroDoctorTitle();
+    window.addEventListener('resize', alignHeroDoctorTitle, { passive: true });
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(alignHeroDoctorTitle);
+    }
+
     const heroModeChips = document.querySelectorAll('[data-hero-mode]');
     heroModeChips.forEach(chip => {
       chip.addEventListener('click', (e) => {
@@ -1374,7 +1412,7 @@
       document.body.style.overflow = '';
     }
 
-    document.querySelectorAll('.btn-view-cert').forEach(btn => {
+    document.querySelectorAll('.btn-view-cert, .view-cert-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         const src = btn.getAttribute('data-cert-src');
@@ -1576,68 +1614,80 @@
     if (hasGsap) {
       const tl = window.gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-      // Top strip badges
-      tl.to('.motion-hero-top', { opacity: 1, y: 0, duration: 0.6 }, 0.05);
+      // Optional hero animation elements
+      if (document.querySelector('.motion-hero-top')) {
+        tl.to('.motion-hero-top', { opacity: 1, y: 0, duration: 0.6 }, 0.05);
+      }
+      if (document.querySelector('.motion-hero-eyebrow')) {
+        tl.to('.motion-hero-eyebrow', { opacity: 1, y: 0, duration: 0.55 }, 0.15);
+      }
+      if (document.querySelector('.hero-line-inner')) {
+        tl.to('.hero-line-inner', {
+          y: '0%',
+          opacity: 1,
+          duration: 0.85,
+          stagger: 0.12,
+          ease: 'power3.out'
+        }, 0.25);
+      }
+      if (document.querySelector('.motion-hero-desc')) {
+        tl.to('.motion-hero-desc', { opacity: 1, y: 0, duration: 0.7 }, 0.3);
+      }
+      if (document.querySelector('.motion-hero-ctas')) {
+        tl.to('.motion-hero-ctas', { opacity: 1, y: 0, duration: 0.65, ease: 'back.out(1.2)' }, 0.45);
+      }
+      if (document.querySelector('.motion-hero-schedule')) {
+        tl.to('.motion-hero-schedule', { opacity: 1, y: 0, duration: 0.55 }, 0.55);
+      }
 
-      // Eyebrow tag
-      tl.to('.motion-hero-eyebrow', { opacity: 1, y: 0, duration: 0.55 }, 0.15);
+      // Doctor Portrait reveal (smooth entrance, keeping face stable and visually natural)
+      if (document.querySelector('.hero-doctor-portrait')) {
+        tl.fromTo('.hero-doctor-portrait',
+          { opacity: 0, y: 24 },
+          { opacity: 1, y: 0, duration: 0.95, ease: 'power2.out' }, 0.2);
+      } else if (document.querySelector('.medera-doctor-cutout')) {
+        tl.to('.medera-doctor-cutout', {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.95,
+          ease: 'power2.out'
+        }, 0.2);
+      }
 
-      // 2-line heading reveal
-      tl.to('.hero-line-inner', {
-        y: '0%',
-        opacity: 1,
-        duration: 0.85,
-        stagger: 0.12,
-        ease: 'power3.out'
-      }, 0.25);
-
-      // Supporting description
-      tl.to('.motion-hero-desc', { opacity: 1, y: 0, duration: 0.7 }, 0.45);
-
-      // CTAs with gentle spring
-      tl.to('.motion-hero-ctas', { opacity: 1, y: 0, duration: 0.65, ease: 'back.out(1.2)' }, 0.58);
-
-      // Schedule meta pill
-      tl.to('.motion-hero-schedule', { opacity: 1, y: 0, duration: 0.55 }, 0.7);
-
-      // Doctor Cutout Portrait reveal (smooth scale & opacity, keeping face stable and visually natural)
-      tl.to('.medera-doctor-cutout', {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.95,
-        ease: 'power2.out'
-      }, 0.2);
-
-      // DNA Helix & Molecular artwork line drawing
-      tl.to('.dna-strand', {
-        strokeDashoffset: 0,
-        duration: 1.8,
-        stagger: 0.2,
-        ease: 'power2.inOut'
-      }, 0.3);
-
-      tl.to('.dna-rung', {
-        strokeDashoffset: 0,
-        duration: 1.2,
-        stagger: 0.04,
-        ease: 'power2.out'
-      }, 0.6);
-
-      tl.to('.molecular-cluster line', {
-        strokeDashoffset: 0,
-        duration: 1.2,
-        stagger: 0.08,
-        ease: 'power2.out'
-      }, 0.7);
-
-      tl.to('.molecular-cluster circle, .dna-helix-group circle', {
-        opacity: 1,
-        scale: 1,
-        duration: 0.6,
-        stagger: 0.03,
-        ease: 'back.out(1.4)'
-      }, 0.8);
+      if (document.querySelector('.dna-strand')) {
+        tl.to('.dna-strand', {
+          strokeDashoffset: 0,
+          duration: 1.8,
+          stagger: 0.2,
+          ease: 'power2.inOut'
+        }, 0.3);
+      }
+      if (document.querySelector('.dna-rung')) {
+        tl.to('.dna-rung', {
+          strokeDashoffset: 0,
+          duration: 1.2,
+          stagger: 0.04,
+          ease: 'power2.out'
+        }, 0.6);
+      }
+      if (document.querySelector('.molecular-cluster line')) {
+        tl.to('.molecular-cluster line', {
+          strokeDashoffset: 0,
+          duration: 1.2,
+          stagger: 0.08,
+          ease: 'power2.out'
+        }, 0.7);
+      }
+      if (document.querySelector('.molecular-cluster circle, .dna-helix-group circle')) {
+        tl.to('.molecular-cluster circle, .dna-helix-group circle', {
+          opacity: 1,
+          scale: 1,
+          duration: 0.6,
+          stagger: 0.03,
+          ease: 'back.out(1.4)'
+        }, 0.8);
+      }
 
     } else {
       // Graceful CSS transition fallback
@@ -1724,6 +1774,11 @@
   }
 
   function setupSectionReveals(hasGsap) {
+    if (window.innerWidth <= 992) {
+      // On mobile viewports, keep content visible immediately without waiting for scroll triggers
+      return;
+    }
+
     if (hasGsap && typeof window.ScrollTrigger !== 'undefined') {
       // 1. Clinic Quick Information Essentials Strip
       if (document.querySelector('.clinic-essentials-grid')) {
